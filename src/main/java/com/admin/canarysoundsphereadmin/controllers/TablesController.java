@@ -1,9 +1,9 @@
-package com.admin.canarysoundsphereadmin;
+package com.admin.canarysoundsphereadmin.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class TablesController {
     @FXML
     private Label welcomeText;
 
