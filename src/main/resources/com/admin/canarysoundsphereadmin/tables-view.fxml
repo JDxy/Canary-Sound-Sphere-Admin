@@ -14,19 +14,19 @@
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="275.0" prefWidth="477.0">
                <children>
-                  <TableView layoutX="25.0" layoutY="6.0" prefHeight="300.0" prefWidth="830.0">
+                  <TableView fx:id="eventsTable" layoutX="25.0" layoutY="6.0" prefHeight="300.0" prefWidth="830.0">
                      <columns>
-                        <TableColumn prefWidth="75.0" text="id" />
-                        <TableColumn prefWidth="75.0" text="logo" />
-                        <TableColumn prefWidth="75.0" text="image" />
-                        <TableColumn prefWidth="75.0" text="name" />
-                        <TableColumn prefWidth="75.0" text="date" />
-                        <TableColumn prefWidth="75.0" text="time" />
-                        <TableColumn prefWidth="75.0" text="capacity" />
-                        <TableColumn prefWidth="75.0" text="description" />
-                        <TableColumn prefWidth="75.0" text="direction" />
-                        <TableColumn prefWidth="75.0" text="marker" />
-                        <TableColumn prefWidth="75.0" text="ticket_store" />
+                        <TableColumn fx:id="idColumn" prefWidth="75.0" text="id" />
+                        <TableColumn fx:id="logoColumn" prefWidth="75.0" text="logo" />
+                        <TableColumn fx:id="imageColumn" prefWidth="75.0" text="image" />
+                        <TableColumn fx:id="nameColumn" prefWidth="75.0" text="name" />
+                        <TableColumn fx:id="dateColumn" prefWidth="75.0" text="date" />
+                        <TableColumn fx:id="timeColumn" prefWidth="75.0" text="time" />
+                        <TableColumn fx:id="capacityColumn" prefWidth="75.0" text="capacity" />
+                        <TableColumn fx:id="descriptionColumn" prefWidth="75.0" text="description" />
+                        <TableColumn fx:id="directionColumn" prefWidth="75.0" text="direction" />
+                        <TableColumn fx:id="markerColumn" prefWidth="75.0" text="marker" />
+                        <TableColumn fx:id="ticket_storeColumn" prefWidth="75.0" text="ticket_store" />
                      </columns>
                   </TableView>
                   <HBox alignment="CENTER_RIGHT" layoutX="24.0" layoutY="316.0" prefHeight="54.0" prefWidth="831.0" spacing="40.0">
