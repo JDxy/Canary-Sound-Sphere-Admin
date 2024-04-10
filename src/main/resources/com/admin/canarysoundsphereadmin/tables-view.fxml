@@ -16,17 +16,17 @@
                <children>
                   <TableView fx:id="eventsTable" layoutX="25.0" layoutY="6.0" prefHeight="300.0" prefWidth="830.0">
                      <columns>
-                        <TableColumn fx:id="idColumn" prefWidth="75.0" text="id" />
-                        <TableColumn fx:id="logoColumn" prefWidth="75.0" text="logo" />
-                        <TableColumn fx:id="imageColumn" prefWidth="75.0" text="image" />
-                        <TableColumn fx:id="nameColumn" prefWidth="75.0" text="name" />
-                        <TableColumn fx:id="dateColumn" prefWidth="75.0" text="date" />
-                        <TableColumn fx:id="timeColumn" prefWidth="75.0" text="time" />
-                        <TableColumn fx:id="capacityColumn" prefWidth="75.0" text="capacity" />
-                        <TableColumn fx:id="descriptionColumn" prefWidth="75.0" text="description" />
-                        <TableColumn fx:id="directionColumn" prefWidth="75.0" text="direction" />
-                        <TableColumn fx:id="markerColumn" prefWidth="75.0" text="marker" />
-                        <TableColumn fx:id="ticket_storeColumn" prefWidth="75.0" text="ticket_store" />
+                        <TableColumn fx:id="idEventsColumn" prefWidth="75.0" text="id" />
+                        <TableColumn fx:id="logoEventsColumn" prefWidth="75.0" text="logo" />
+                        <TableColumn fx:id="imageEventsColumn" prefWidth="75.0" text="image" />
+                        <TableColumn fx:id="nameEventsColumn" prefWidth="75.0" text="name" />
+                        <TableColumn fx:id="dateEventsColumn" prefWidth="75.0" text="date" />
+                        <TableColumn fx:id="timeEventsColumn" prefWidth="75.0" text="time" />
+                        <TableColumn fx:id="capacityEventsColumn" prefWidth="75.0" text="capacity" />
+                        <TableColumn fx:id="descriptionEventsColumn" prefWidth="75.0" text="description" />
+                        <TableColumn fx:id="directionEventsColumn" prefWidth="75.0" text="direction" />
+                        <TableColumn fx:id="markerEventsColumn" prefWidth="75.0" text="marker" />
+                        <TableColumn fx:id="ticket_storeEventsColumn" prefWidth="75.0" text="ticket_store" />
                      </columns>
                   </TableView>
                   <HBox alignment="CENTER_RIGHT" layoutX="24.0" layoutY="316.0" prefHeight="54.0" prefWidth="831.0" spacing="40.0">
@@ -44,15 +44,15 @@
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <TableView layoutX="24.0" layoutY="7.0" prefHeight="300.0" prefWidth="830.0">
+                  <TableView fx:id="authorsTable" layoutX="24.0" layoutY="7.0" prefHeight="300.0" prefWidth="830.0">
                      <columns>
-                        <TableColumn prefWidth="75.0" text="id" />
-                        <TableColumn prefWidth="123.19994354248047" text="name" />
-                        <TableColumn prefWidth="60.0" text="image" />
-                        <TableColumn prefWidth="107.20001220703125" text="foundation_year" />
-                        <TableColumn minWidth="0.79998779296875" prefWidth="107.20001220703125" text="music_type" />
-                        <TableColumn prefWidth="221.60006713867188" text="description" />
-                        <TableColumn prefWidth="132.80002441406248" text="music_list" />
+                        <TableColumn fx:id="idAuthorsColumn" prefWidth="75.0" text="id" />
+                        <TableColumn fx:id="nameAuthorsColumn" prefWidth="123.19994354248047" text="name" />
+                        <TableColumn fx:id="imageAuthorsColumn" prefWidth="60.0" text="image" />
+                        <TableColumn fx:id="foundation_yearAuthorsColumn" prefWidth="107.20001220703125" text="foundation_year" />
+                        <TableColumn fx:id="music_typeAuthorsColumn" minWidth="0.79998779296875" prefWidth="107.20001220703125" text="music_type" />
+                        <TableColumn fx:id="descriptionAuthorsColumn" prefWidth="221.60006713867188" text="description" />
+                        <TableColumn fx:id="music_listAuthorsColumn" prefWidth="132.80002441406248" text="music_list" />
                      </columns>
                   </TableView>
                   <HBox alignment="CENTER_RIGHT" layoutX="24.0" layoutY="316.0" prefHeight="54.0" prefWidth="831.0" spacing="40.0">

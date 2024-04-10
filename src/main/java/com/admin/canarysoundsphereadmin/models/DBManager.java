@@ -15,6 +15,45 @@ import org.json.JSONObject;
 
 public class DBManager {
 
+    public static List<Author> getAllAuthors() throws IOException, JSONException {
+        List<Author> authors = new ArrayList<>();
+        String apiUrl = "http://localhost:9006/authors"; // URL del endpoint que devuelve todos los autores
+        URL url = new URL(apiUrl);
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("GET");
+
+        int status = con.getResponseCode();
+        if (status == HttpURLConnection.HTTP_OK) {
+            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            String inputLine;
+            StringBuilder content = new StringBuilder();
+            while ((inputLine = in.readLine()) != null) {
+                content.append(inputLine);
+            }
+            in.close();
+            JSONArray authorsArray = new JSONArray(content.toString());
+
+            for (int i = 0; i < authorsArray.length(); i++) {
+                JSONObject authorJson = authorsArray.getJSONObject(i);
+                Author author = new Author(
+                        authorJson.getString("_id"),
+                        authorJson.getString("name"),
+                        authorJson.getString("image"),
+                        authorJson.getInt("foundation_year"),
+                        authorJson.getString("music_type"),
+                        authorJson.getString("description"),
+                        authorJson.getString("music_list")
+                );
+                authors.add(author);
+            }
+        } else {
+            System.out.println("Error al conectar con la API: " + status);
+        }
+        con.disconnect();
+        return authors;
+    }
+
+
     public static List<EventClass> getAllEvents() throws IOException, JSONException {
         List<EventClass> events = new ArrayList<>();
         String apiUrl = "http://localhost:9006/events"; // URL del endpoint que devuelve todos los eventos
