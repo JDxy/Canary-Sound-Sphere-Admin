@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
@@ -8,31 +9,32 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<TabPane prefHeight="400.0" prefWidth="880.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.canarysoundsphereadmin.controllers.TablesController">
+<TabPane prefHeight="400.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.canarysoundsphereadmin.controllers.TablesController">
    <tabs>
       <Tab text="Eventos">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="275.0" prefWidth="477.0">
                <children>
-                  <TableView fx:id="eventsTable" layoutX="25.0" layoutY="6.0" prefHeight="300.0" prefWidth="830.0">
+                  <TableView fx:id="eventsTable" layoutX="18.0" layoutY="14.0" prefHeight="300.0" prefWidth="870.0">
                      <columns>
-                        <TableColumn fx:id="idEventsColumn" prefWidth="75.0" text="id" />
-                        <TableColumn fx:id="logoEventsColumn" prefWidth="75.0" text="logo" />
-                        <TableColumn fx:id="imageEventsColumn" prefWidth="75.0" text="image" />
-                        <TableColumn fx:id="nameEventsColumn" prefWidth="75.0" text="name" />
-                        <TableColumn fx:id="dateEventsColumn" prefWidth="75.0" text="date" />
-                        <TableColumn fx:id="timeEventsColumn" prefWidth="75.0" text="time" />
-                        <TableColumn fx:id="capacityEventsColumn" prefWidth="75.0" text="capacity" />
-                        <TableColumn fx:id="descriptionEventsColumn" prefWidth="75.0" text="description" />
-                        <TableColumn fx:id="directionEventsColumn" prefWidth="75.0" text="direction" />
-                        <TableColumn fx:id="markerEventsColumn" prefWidth="75.0" text="marker" />
-                        <TableColumn fx:id="ticket_storeEventsColumn" prefWidth="75.0" text="ticket_store" />
+                        <TableColumn fx:id="idEventsColumn" prefWidth="75.0" text="Id" />
+                        <TableColumn fx:id="logoEventsColumn" prefWidth="75.0" text="Logo" />
+                        <TableColumn fx:id="imageEventsColumn" prefWidth="75.0" text="Imagen" />
+                        <TableColumn fx:id="nameEventsColumn" prefWidth="75.0" text="Nombre" />
+                        <TableColumn fx:id="dateEventsColumn" prefWidth="75.0" text="Fecha" />
+                        <TableColumn fx:id="timeEventsColumn" prefWidth="75.0" text="Hora" />
+                        <TableColumn fx:id="capacityEventsColumn" prefWidth="75.0" text="Capacidad" />
+                        <TableColumn fx:id="descriptionEventsColumn" prefWidth="75.0" text="Descripcion" />
+                        <TableColumn fx:id="directionEventsColumn" prefWidth="75.0" text="Direccion" />
+                        <TableColumn fx:id="markerEventsColumn" prefWidth="75.0" text="Marcador" />
+                        <TableColumn fx:id="ticket_storeEventsColumn" prefWidth="117.60001220703123" text="Tienda de tickets" />
                      </columns>
                   </TableView>
                   <HBox alignment="CENTER_RIGHT" layoutX="24.0" layoutY="316.0" prefHeight="54.0" prefWidth="831.0" spacing="40.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Insertar" />
-                        <Button mnemonicParsing="false" text="Actualizar" />
+                        <Label fx:id="eventsTitle" text="Label" textFill="WHITE" visible="false" />
+                        <Button mnemonicParsing="false" onMouseClicked="#insertEventButtonClicked" text="Insertar" />
+                        <Button mnemonicParsing="false" onMouseClicked="#updateEventButtonClicked" text="Actualizar" />
                         <Button mnemonicParsing="false" text="Eliminar" />
                      </children>
                   </HBox>
@@ -44,21 +46,21 @@
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <TableView fx:id="authorsTable" layoutX="24.0" layoutY="7.0" prefHeight="300.0" prefWidth="830.0">
+                  <TableView fx:id="authorsTable" layoutX="24.0" layoutY="14.0" prefHeight="300.0" prefWidth="860.0">
                      <columns>
-                        <TableColumn fx:id="idAuthorsColumn" prefWidth="75.0" text="id" />
-                        <TableColumn fx:id="nameAuthorsColumn" prefWidth="123.19994354248047" text="name" />
-                        <TableColumn fx:id="imageAuthorsColumn" prefWidth="60.0" text="image" />
-                        <TableColumn fx:id="foundation_yearAuthorsColumn" prefWidth="107.20001220703125" text="foundation_year" />
-                        <TableColumn fx:id="music_typeAuthorsColumn" minWidth="0.79998779296875" prefWidth="107.20001220703125" text="music_type" />
-                        <TableColumn fx:id="descriptionAuthorsColumn" prefWidth="221.60006713867188" text="description" />
-                        <TableColumn fx:id="music_listAuthorsColumn" prefWidth="132.80002441406248" text="music_list" />
+                        <TableColumn fx:id="idAuthorsColumn" prefWidth="75.0" text="Id" />
+                        <TableColumn fx:id="nameAuthorsColumn" prefWidth="123.19994354248047" text="Nombre" />
+                        <TableColumn fx:id="imageAuthorsColumn" prefWidth="60.0" text="Imagen" />
+                        <TableColumn fx:id="foundation_yearAuthorsColumn" prefWidth="107.20001220703125" text="Año de fundacion" />
+                        <TableColumn fx:id="music_typeAuthorsColumn" minWidth="0.79998779296875" prefWidth="107.20001220703125" text="Tipo de musica" />
+                        <TableColumn fx:id="descriptionAuthorsColumn" prefWidth="221.60006713867188" text="Descripcion" />
+                        <TableColumn fx:id="music_listAuthorsColumn" prefWidth="156.80002441406248" text="Lista de canciones" />
                      </columns>
                   </TableView>
                   <HBox alignment="CENTER_RIGHT" layoutX="24.0" layoutY="316.0" prefHeight="54.0" prefWidth="831.0" spacing="40.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Insertar" />
-                        <Button mnemonicParsing="false" text="Actualizar" />
+                        <Button mnemonicParsing="false" onMouseClicked="#insertAuthorButtonClicked" text="Insertar" />
+                        <Button mnemonicParsing="false" onMouseClicked="#updateAuthorButtonClicked" text="Actualizar" />
                         <Button mnemonicParsing="false" text="Eliminar" />
                      </children>
                   </HBox>

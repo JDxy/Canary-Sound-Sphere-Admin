@@ -6,6 +6,7 @@ import com.admin.canarysoundsphereadmin.models.EventClass;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -13,10 +14,14 @@ import org.json.JSONException;
 
 import java.io.IOException;
 
+import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers.cambiarScene;
 import static com.admin.canarysoundsphereadmin.models.DBManager.getAllEvents;
 
 public class TablesController {
 // Events table
+    @FXML
+    private Label eventsTitle;
+
     @FXML
     private TableView<EventClass> eventsTable;
 
@@ -119,5 +124,21 @@ public class TablesController {
         }
 
         authorsTable.setItems(authors);
+    }
+
+    public void insertAuthorButtonClicked(){
+        cambiarScene("/com/admin/canarysoundsphereadmin/insertAuthor-view.fxml", "Insertar evento", eventsTitle);
+    }
+
+    public void updateAuthorButtonClicked(){
+        cambiarScene("/com/admin/canarysoundsphereadmin/updateAuthor-view.fxml", "Actualizar evento", eventsTitle);
+    }
+
+    public void insertEventButtonClicked(){
+        cambiarScene("/com/admin/canarysoundsphereadmin/insertEvent-view.fxml", "Insertar evento", eventsTitle);
+    }
+
+    public void updateEventButtonClicked(){
+        cambiarScene("/com/admin/canarysoundsphereadmin/updateEvent-view.fxml", "Actualizar evento", eventsTitle);
     }
 }
