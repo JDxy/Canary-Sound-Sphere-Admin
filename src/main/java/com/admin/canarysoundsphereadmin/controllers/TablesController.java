@@ -84,6 +84,8 @@ public class TablesController {
     @FXML
     private TableColumn<Author, String> music_listAuthorsColumn;
 
+    public static String eventId;
+
     @FXML
     protected void initialize() throws JSONException, IOException {
         // Add content event table
@@ -143,7 +145,15 @@ public class TablesController {
     }
 
     public void updateEventButtonClicked(){
-        cambiarScene("/com/admin/canarysoundsphereadmin/updateEvent-view.fxml", "Actualizar evento", eventsTitle);
+        EventClass selectedEvent = eventsTable.getSelectionModel().getSelectedItem();
+
+        if(selectedEvent != null) {
+            eventId = selectedEvent.get_id();
+            cambiarScene("/com/admin/canarysoundsphereadmin/updateEvent-view.fxml", "Actualizar evento", eventsTitle);
+
+        } else {
+            System.out.println("Por favor, selecciona un evento para eliminar.");
+        }
     }
 
     public void deleteEventButtonClicked(){

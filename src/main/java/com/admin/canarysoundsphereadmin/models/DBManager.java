@@ -193,7 +193,6 @@ public class DBManager {
 
     public static boolean deleteEventById(String eventId) {
         try {
-            // Construir la URL del endpoint para eliminar eventos por ID
             String apiUrl = "http://localhost:9006/events/delete/" + eventId;
             URL url = new URL(apiUrl);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -210,6 +209,38 @@ public class DBManager {
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Error al eliminar el evento.");
+            return false;
+        }
+    }
+
+    public static boolean updateEventFieldById(String eventId, String fieldName, String newValue) {
+        try {
+            JSONObject updateJson = new JSONObject();
+            updateJson.put(fieldName, newValue);
+
+            String apiUrl = "http://localhost:9006/events/update/" + eventId;
+            URL url = new URL(apiUrl);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("PUT");
+            con.setRequestProperty("Content-Type", "application/json; utf-8");
+            con.setDoOutput(true);
+
+            try(OutputStream os = con.getOutputStream()) {
+                byte[] input = updateJson.toString().getBytes("utf-8");
+                os.write(input, 0, input.length);
+            }
+
+            int status = con.getResponseCode();
+            if (status == HttpURLConnection.HTTP_OK) {
+                System.out.println("Campo actualizado exitosamente.");
+                return true;
+            } else {
+                System.out.println("Error al conectar con la API: " + status);
+                return false;
+            }
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+            System.out.println("Error al actualizar el campo del evento.");
             return false;
         }
     }
