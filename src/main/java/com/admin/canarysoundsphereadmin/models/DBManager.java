@@ -3,6 +3,7 @@ package com.admin.canarysoundsphereadmin.models;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
@@ -96,6 +97,45 @@ public class DBManager {
         return events;
     }
 
+    public static boolean insertEvent(EventClass event) {
+        try {
+            // Convertir el objeto EventClass a JSON
+            JSONObject eventJson = new JSONObject();
+            eventJson.put("_id", event.get_id());
+            eventJson.put("logo", event.getLogo());
+            eventJson.put("image", event.getImage());
+            eventJson.put("name", event.getName());
+            eventJson.put("date", event.getDate());
+            eventJson.put("time", event.getTime());
+            eventJson.put("capacity", event.getCapacity());
+            eventJson.put("description", event.getDescription());
+            eventJson.put("direction", event.getDirection());
+            eventJson.put("marker", event.getMarker());
+            eventJson.put("ticket_store", event.getTicket_store());
+
+            // Enviar la solicitud HTTP POST al endpoint correspondiente
+            String apiUrl = "http://localhost:9006/events/add_event"; // URL del endpoint para insertar eventos
+            URL url = new URL(apiUrl);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("POST");
+            con.setRequestProperty("Content-Type", "application/json; utf-8");
+            con.setDoOutput(true);
+
+            try(OutputStream os = con.getOutputStream()) {
+                byte[] input = eventJson.toString().getBytes("utf-8");
+                os.write(input, 0, input.length);
+            }
+
+            int status = con.getResponseCode();
+            System.out.println(status);
+            return true;
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+            System.out.println("Error al insertar el evento.");
+            return false;
+        }
+    }
+
     public static boolean findAdmin(String name, String password) throws IOException, JSONException {
         String apiUrl = "http://localhost:9006/admins/" + name;
         URL url = new URL(apiUrl);
@@ -127,4 +167,51 @@ public class DBManager {
         con.disconnect();
         return false;
     }
+
+    public static String idEventPlusOne(){
+        try {
+            List<EventClass> events = DBManager.getAllEvents();
+
+            int maxId = 0;
+            for (EventClass event : events) {
+                int eventId = Integer.parseInt(event.get_id());
+                if (eventId > maxId) {
+                    maxId = eventId;
+                }
+            }
+
+            maxId++;
+
+            String newEventId = String.format("%04d", maxId);
+            return newEventId;
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+            System.out.println("Error al obtener los eventos desde la base de datos.");
+        }
+        return "0001";
+    }
+
+    public static boolean deleteEventById(String eventId) {
+        try {
+            // Construir la URL del endpoint para eliminar eventos por ID
+            String apiUrl = "http://localhost:9006/events/delete/" + eventId;
+            URL url = new URL(apiUrl);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("DELETE");
+
+            int status = con.getResponseCode();
+            if (status == HttpURLConnection.HTTP_OK) {
+                System.out.println("Evento eliminado exitosamente.");
+                return true;
+            } else {
+                System.out.println("Error al conectar con la API: " + status);
+                return false;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Error al eliminar el evento.");
+            return false;
+        }
+    }
+
 }

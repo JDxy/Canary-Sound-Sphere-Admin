@@ -15,6 +15,7 @@ import org.json.JSONException;
 import java.io.IOException;
 
 import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers.cambiarScene;
+import static com.admin.canarysoundsphereadmin.models.DBManager.deleteEventById;
 import static com.admin.canarysoundsphereadmin.models.DBManager.getAllEvents;
 
 public class TablesController {
@@ -134,6 +135,9 @@ public class TablesController {
         cambiarScene("/com/admin/canarysoundsphereadmin/updateAuthor-view.fxml", "Actualizar evento", eventsTitle);
     }
 
+    public void deleteAuthorButtonClicked(){
+    }
+
     public void insertEventButtonClicked(){
         cambiarScene("/com/admin/canarysoundsphereadmin/insertEvent-view.fxml", "Insertar evento", eventsTitle);
     }
@@ -141,4 +145,27 @@ public class TablesController {
     public void updateEventButtonClicked(){
         cambiarScene("/com/admin/canarysoundsphereadmin/updateEvent-view.fxml", "Actualizar evento", eventsTitle);
     }
+
+    public void deleteEventButtonClicked(){
+        EventClass selectedEvent = eventsTable.getSelectionModel().getSelectedItem();
+
+        if(selectedEvent != null) {
+            String eventId = selectedEvent.get_id();
+            boolean deleted = deleteEventById(eventId);
+            if(deleted) {
+                try {
+                    ObservableList<EventClass> events = FXCollections.observableArrayList();
+                    events.addAll(DBManager.getAllEvents());
+                    eventsTable.setItems(events);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else {
+                System.out.println("Error al eliminar el evento.");
+            }
+        } else {
+            System.out.println("Por favor, selecciona un evento para eliminar.");
+        }
+    }
+
 }

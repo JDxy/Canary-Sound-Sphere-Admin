@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="558.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.canarysoundsphereadmin.controllers.InsertEventsController">
+<AnchorPane prefHeight="616.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.canarysoundsphereadmin.controllers.InsertEventsController">
    <children>
       <Label fx:id="title" layoutX="111.0" layoutY="14.0" text="Insertar Evento">
          <font>
@@ -20,60 +20,66 @@
             <VBox prefHeight="27.0" prefWidth="198.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
-                  <TextField prefHeight="26.0" prefWidth="198.0" />
+                  <TextField fx:id="nameTextField" prefHeight="26.0" prefWidth="198.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="27.0" prefWidth="198.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Logo" />
+                  <TextField fx:id="logoTextField" prefHeight="26.0" prefWidth="198.0" />
                </children>
             </VBox>
             <VBox prefHeight="27.0" prefWidth="198.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Imagen" />
-                  <TextField prefHeight="26.0" prefWidth="198.0" />
+                  <TextField fx:id="imageTextField" prefHeight="26.0" prefWidth="198.0" />
                </children>
             </VBox>
             <VBox prefHeight="27.0" prefWidth="198.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha" />
-                  <TextField prefHeight="26.0" prefWidth="198.0" />
+                  <TextField fx:id="dateTextField" prefHeight="26.0" prefWidth="198.0" />
                </children>
             </VBox>
             <VBox prefHeight="27.0" prefWidth="198.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hora" />
-                  <TextField prefHeight="26.0" prefWidth="198.0" />
+                  <TextField fx:id="hourTextField" prefHeight="26.0" prefWidth="198.0" />
                </children>
             </VBox>
             <VBox prefHeight="27.0" prefWidth="198.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Capacidad" />
-                  <TextField prefHeight="26.0" prefWidth="198.0" />
+                  <TextField fx:id="capacityTextField" prefHeight="26.0" prefWidth="198.0" />
                </children>
             </VBox>
             <VBox prefHeight="27.0" prefWidth="198.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Descripcion" />
-                  <TextField prefHeight="26.0" prefWidth="198.0" />
+                  <TextField fx:id="descriptionTextField" prefHeight="26.0" prefWidth="198.0" />
                </children>
             </VBox>
             <VBox prefHeight="27.0" prefWidth="198.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Direccion" />
-                  <TextField prefHeight="26.0" prefWidth="198.0" />
+                  <TextField fx:id="directionTextField" prefHeight="26.0" prefWidth="198.0" />
                </children>
             </VBox>
             <VBox prefHeight="27.0" prefWidth="198.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Marcador" />
-                  <TextField prefHeight="26.0" prefWidth="198.0" />
+                  <TextField fx:id="markerTextField" prefHeight="26.0" prefWidth="198.0" />
                </children>
             </VBox>
             <VBox prefHeight="27.0" prefWidth="198.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tienda de tickets" />
-                  <TextField prefHeight="26.0" prefWidth="198.0" />
+                  <TextField fx:id="ticketsStoreTextFields" prefHeight="26.0" prefWidth="198.0" />
                </children>
             </VBox>
          </children>
       </VBox>
-      <Button layoutX="315.0" layoutY="524.0" mnemonicParsing="false" onMouseClicked="#sendButtonClicked" text="Enviar" />
-      <Button layoutX="26.0" layoutY="524.0" mnemonicParsing="false" onMouseClicked="#exitButtonClicked" text="Salir" />
+      <Button layoutX="322.0" layoutY="576.0" mnemonicParsing="false" onMouseClicked="#sendButtonClicked" text="Enviar" />
+      <Button layoutX="27.0" layoutY="576.0" mnemonicParsing="false" onMouseClicked="#exitButtonClicked" text="Salir" />
    </children>
 </AnchorPane>

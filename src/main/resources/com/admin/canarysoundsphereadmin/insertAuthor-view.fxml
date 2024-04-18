@@ -20,37 +20,37 @@
             <VBox prefHeight="27.0" prefWidth="198.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
-                  <TextField prefHeight="26.0" prefWidth="198.0" />
+                  <TextField fx:id="nameTextField" prefHeight="26.0" prefWidth="198.0" />
                </children>
             </VBox>
             <VBox prefHeight="27.0" prefWidth="198.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Imagen" />
-                  <TextField prefHeight="26.0" prefWidth="198.0" />
+                  <TextField fx:id="imageTextField" prefHeight="26.0" prefWidth="198.0" />
                </children>
             </VBox>
             <VBox prefHeight="27.0" prefWidth="198.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Año de fundacion" />
-                  <TextField prefHeight="26.0" prefWidth="198.0" />
+                  <TextField fx:id="foundationYearTextField" prefHeight="26.0" prefWidth="198.0" />
                </children>
             </VBox>
             <VBox prefHeight="27.0" prefWidth="198.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de musica" />
-                  <TextField prefHeight="26.0" prefWidth="198.0" />
+                  <TextField fx:id="musicTypeTextField" prefHeight="26.0" prefWidth="198.0" />
                </children>
             </VBox>
             <VBox prefHeight="27.0" prefWidth="198.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Descripcion" />
-                  <TextField prefHeight="26.0" prefWidth="198.0" />
+                  <TextField fx:id="descriptionTextField" prefHeight="26.0" prefWidth="198.0" />
                </children>
             </VBox>
             <VBox prefHeight="27.0" prefWidth="198.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de canciones" />
-                  <TextField prefHeight="26.0" prefWidth="198.0" />
+                  <TextField fx:id="songsListsTextFields" prefHeight="26.0" prefWidth="198.0" />
                </children>
             </VBox>
          </children>

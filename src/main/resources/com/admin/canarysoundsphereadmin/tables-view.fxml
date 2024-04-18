@@ -35,7 +35,7 @@
                         <Label fx:id="eventsTitle" text="Label" textFill="WHITE" visible="false" />
                         <Button mnemonicParsing="false" onMouseClicked="#insertEventButtonClicked" text="Insertar" />
                         <Button mnemonicParsing="false" onMouseClicked="#updateEventButtonClicked" text="Actualizar" />
-                        <Button mnemonicParsing="false" text="Eliminar" />
+                        <Button mnemonicParsing="false" onMouseClicked="#deleteEventButtonClicked" text="Eliminar" />
                      </children>
                   </HBox>
                </children>
@@ -61,7 +61,7 @@
                      <children>
                         <Button mnemonicParsing="false" onMouseClicked="#insertAuthorButtonClicked" text="Insertar" />
                         <Button mnemonicParsing="false" onMouseClicked="#updateAuthorButtonClicked" text="Actualizar" />
-                        <Button mnemonicParsing="false" text="Eliminar" />
+                        <Button mnemonicParsing="false" onMouseClicked="#deleteAuthorButtonClicked" text="Eliminar" />
                      </children>
                   </HBox>
                </children></AnchorPane>
