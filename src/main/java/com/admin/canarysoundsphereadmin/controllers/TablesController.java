@@ -15,8 +15,7 @@ import org.json.JSONException;
 import java.io.IOException;
 
 import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers.cambiarScene;
-import static com.admin.canarysoundsphereadmin.models.DBManager.deleteEventById;
-import static com.admin.canarysoundsphereadmin.models.DBManager.getAllEvents;
+import static com.admin.canarysoundsphereadmin.models.DBManager.*;
 
 public class TablesController {
 // Events table
@@ -86,6 +85,8 @@ public class TablesController {
 
     public static String eventId;
 
+    public static String authorId;
+
     @FXML
     protected void initialize() throws JSONException, IOException {
         // Add content event table
@@ -134,10 +135,36 @@ public class TablesController {
     }
 
     public void updateAuthorButtonClicked(){
-        cambiarScene("/com/admin/canarysoundsphereadmin/updateAuthor-view.fxml", "Actualizar evento", eventsTitle);
+        Author selectedAuthor = authorsTable.getSelectionModel().getSelectedItem();
+
+        if(selectedAuthor != null) {
+            authorId = selectedAuthor.get_id();
+            cambiarScene("/com/admin/canarysoundsphereadmin/updateAuthor-view.fxml", "Actualizar autor", eventsTitle);
+        } else {
+            System.out.println("Por favor, selecciona un evento para eliminar.");
+        }
     }
 
     public void deleteAuthorButtonClicked(){
+        Author selectedAuthor = authorsTable.getSelectionModel().getSelectedItem();
+
+        if(selectedAuthor != null) {
+            authorId = selectedAuthor.get_id();
+            boolean deleted = deleteAuthorById(authorId);
+            if(deleted) {
+                try {
+                    ObservableList<Author> authors = FXCollections.observableArrayList();
+                    authors.addAll(DBManager.getAllAuthors());
+                    authorsTable.setItems(authors);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else {
+                System.out.println("Error al eliminar el evento.");
+            }
+        } else {
+            System.out.println("Por favor, selecciona un evento para eliminar.");
+        }
     }
 
     public void insertEventButtonClicked(){
@@ -160,7 +187,7 @@ public class TablesController {
         EventClass selectedEvent = eventsTable.getSelectionModel().getSelectedItem();
 
         if(selectedEvent != null) {
-            String eventId = selectedEvent.get_id();
+            eventId = selectedEvent.get_id();
             boolean deleted = deleteEventById(eventId);
             if(deleted) {
                 try {

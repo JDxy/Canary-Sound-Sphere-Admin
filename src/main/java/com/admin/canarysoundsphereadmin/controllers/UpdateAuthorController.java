@@ -5,17 +5,24 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers.cambiarScene;
+import static com.admin.canarysoundsphereadmin.controllers.TablesController.authorId;
+import static com.admin.canarysoundsphereadmin.controllers.TablesController.eventId;
+import static com.admin.canarysoundsphereadmin.models.DBManager.updateAuthorFieldById;
+import static com.admin.canarysoundsphereadmin.models.DBManager.updateEventFieldById;
 
 public class UpdateAuthorController {
     @FXML
     private Label title;
     @FXML
     private ComboBox fieldsComboBox;
+    @FXML
+    private TextField newValueTextField;
     public void initialize(){
         ObservableList<String> fields = FXCollections.observableArrayList(
-                "Nombre", "Imagen", "Año de fundacion", "Tipo de musica", "Descripción", "Lista de canciones"
+                "Name", "Image", "Foundation_year", "Music_type", "Description", "Music_list"
         );
         fieldsComboBox.setItems(fields);    }
     public void exitButtonClicked(){
@@ -23,6 +30,18 @@ public class UpdateAuthorController {
     }
 
     public void sendButtonClicked(){
-        cambiarScene("/com/admin/canarysoundsphereadmin/tables-view.fxml", "Tablas", title);
+        String fieldName = (String) fieldsComboBox.getValue();
+        String newValue = newValueTextField.getText();
+        System.out.println(fieldName);
+        if (fieldName != null && !newValue.isEmpty()) {
+            boolean updated = updateAuthorFieldById(authorId, fieldName.toLowerCase(), newValue);
+            if (updated) {
+                cambiarScene("/com/admin/canarysoundsphereadmin/tables-view.fxml", "Tablas", title);
+            } else {
+                System.out.println("Error al actualizar el campo del evento.");
+            }
+        } else {
+            System.out.println("Por favor, selecciona un campo y proporciona un nuevo valor.");
+        }
     }
 }

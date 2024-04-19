@@ -136,6 +136,47 @@ public class DBManager {
         }
     }
 
+    public static boolean insertAuthor(Author author) {
+        try {
+            // Convertir el objeto Author a JSON
+            JSONObject authorJson = new JSONObject();
+            authorJson.put("_id", author.get_id());
+            authorJson.put("name", author.getName());
+            authorJson.put("image", author.getImage());
+            authorJson.put("foundation_year", author.getFoundation_year());
+            authorJson.put("music_type", author.getMusic_type());
+            authorJson.put("description", author.getDescription());
+            authorJson.put("music_list", author.getMusic_list());
+
+            // Enviar la solicitud HTTP POST al endpoint correspondiente
+            String apiUrl = "http://localhost:9006/authors/add_author"; // URL del endpoint para insertar autores
+            URL url = new URL(apiUrl);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("POST");
+            con.setRequestProperty("Content-Type", "application/json; utf-8");
+            con.setDoOutput(true);
+
+            try(OutputStream os = con.getOutputStream()) {
+                byte[] input = authorJson.toString().getBytes("utf-8");
+                os.write(input, 0, input.length);
+            }
+
+            int status = con.getResponseCode();
+            if (status == HttpURLConnection.HTTP_OK) {
+                System.out.println("Autor insertado exitosamente.");
+                return true;
+            } else {
+                System.out.println("Error al conectar con la API: " + status);
+                return false;
+            }
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+            System.out.println("Error al insertar el autor.");
+            return false;
+        }
+    }
+
+
     public static boolean findAdmin(String name, String password) throws IOException, JSONException {
         String apiUrl = "http://localhost:9006/admins/" + name;
         URL url = new URL(apiUrl);
@@ -191,6 +232,29 @@ public class DBManager {
         return "0001";
     }
 
+    public static String idAuthorPlusOne(){
+        try {
+            List<Author> authors = DBManager.getAllAuthors();
+
+            int maxId = 0;
+            for (Author author : authors) {
+                int authorId = Integer.parseInt(author.get_id());
+                if (authorId > maxId) {
+                    maxId = authorId;
+                }
+            }
+
+            maxId++;
+
+            String newAuthorId = String.format("%04d", maxId);
+            return newAuthorId;
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+            System.out.println("Error al obtener los eventos desde la base de datos.");
+        }
+        return "0001";
+    }
+
     public static boolean deleteEventById(String eventId) {
         try {
             String apiUrl = "http://localhost:9006/events/delete/" + eventId;
@@ -212,6 +276,29 @@ public class DBManager {
             return false;
         }
     }
+
+    public static boolean deleteAuthorById(String authorId) {
+        try {
+            String apiUrl = "http://localhost:9006/authors/delete/" + authorId;
+            URL url = new URL(apiUrl);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("DELETE");
+
+            int status = con.getResponseCode();
+            if (status == HttpURLConnection.HTTP_OK) {
+                System.out.println("Evento eliminado exitosamente.");
+                return true;
+            } else {
+                System.out.println("Error al conectar con la API: " + status);
+                return false;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Error al eliminar el autor.");
+            return false;
+        }
+    }
+
 
     public static boolean updateEventFieldById(String eventId, String fieldName, String newValue) {
         try {
@@ -241,6 +328,38 @@ public class DBManager {
         } catch (IOException | JSONException e) {
             e.printStackTrace();
             System.out.println("Error al actualizar el campo del evento.");
+            return false;
+        }
+    }
+
+    public static boolean updateAuthorFieldById(String authorId, String fieldName, String newValue) {
+        try {
+            JSONObject updateJson = new JSONObject();
+            updateJson.put(fieldName, newValue);
+
+            String apiUrl = "http://localhost:9006/authors/update/" + authorId;
+            URL url = new URL(apiUrl);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("PUT");
+            con.setRequestProperty("Content-Type", "application/json; utf-8");
+            con.setDoOutput(true);
+
+            try(OutputStream os = con.getOutputStream()) {
+                byte[] input = updateJson.toString().getBytes("utf-8");
+                os.write(input, 0, input.length);
+            }
+
+            int status = con.getResponseCode();
+            if (status == HttpURLConnection.HTTP_OK) {
+                System.out.println("Campo actualizado exitosamente.");
+                return true;
+            } else {
+                System.out.println("Error al conectar con la API: " + status);
+                return false;
+            }
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+            System.out.println("Error al actualizar el campo del autor.");
             return false;
         }
     }
