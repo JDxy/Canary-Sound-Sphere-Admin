@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+#main_panel {
+    -fx-background-color: #8ECAE6;
+}
+
+.root {
+  -fx-font-family: "Roboto", sans-serif;
+  -fx-font-size: 16px;
+  -fx-font-weight: 600;
+  -fx-text-fill: white;
+}
+
+.login_title {
+  -fx-text-fill: #FB8500;
+    -fx-font-size: 100px;
+    -fx-font-weight: 900;
+    -fx-effect: dropshadow(three-pass-box, black, 10, 0.5, 5, 0);
+}
+
+.input_Style {
+    -fx-background-color: rgba(0, 0, 0, 0.9);
+    -fx-border-color: grey;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-text-fill: white;
+}
+
+.button_style {
+    -fx-font-size: 18px;
+    -fx-border-radius: 5px;
+    -fx-border-width: 2px;
+    -fx-border-color: grey;
+    -fx-background-radius: 5px;
+    -fx-background-color: rgba(0, 0, 0, 0.9);
+    -fx-text-fill: white;
+}
+
+.footer_text{
+    -fx-text-fill: black;
+}

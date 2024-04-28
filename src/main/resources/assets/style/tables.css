@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.root {
+  -fx-font-family: "Roboto", sans-serif;
+  -fx-font-size: 16px;
+  -fx-font-weight: 600;
+  -fx-text-fill: white;
+}
+.tableBg {
+    -fx-background-color: white;
+}
+
+.tab {
+    -fx-background-color: white;
+}
+
+.tab .tab-label {
+    -fx-text-fill: black;
+}
+
+.tab:selected .tab-label {
+    -fx-text-fill: white;
+}
+
+.tab:selected {
+    -fx-background-color: black;
+}
+
+.button_class {
+   -fx-font-size: 18px;
+    -fx-border-radius: 5px;
+    -fx-border-width: 2px;
+    -fx-border-color: grey;
+    -fx-background-radius: 5px;
+    -fx-background-color: rgba(0, 0, 0, 0.9);
+    -fx-text-fill: white;
+}
+
+.button_class:hover {
+    -fx-background-color: #8ECAE6;
+    -fx-text-fill: black;
+}
