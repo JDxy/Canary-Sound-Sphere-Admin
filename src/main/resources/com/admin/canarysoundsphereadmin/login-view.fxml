@@ -56,11 +56,6 @@
             <Font name="Arial Italic" size="48.0" />
          </font>
       </Label>
-      <ImageView fitHeight="43.0" fitWidth="41.0" layoutX="969.0" layoutY="14.0" onMouseClicked="#toggleModeButton" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../assets/icons/dia-y-noche.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="43.0" fitWidth="58.0" layoutX="822.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/icons/llave.png" />

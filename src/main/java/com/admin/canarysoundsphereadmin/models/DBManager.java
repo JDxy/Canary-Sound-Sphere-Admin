@@ -176,7 +176,6 @@ public class DBManager {
         }
     }
 
-
     public static boolean findAdmin(String name, String password) throws IOException, JSONException {
         String apiUrl = "http://localhost:9006/admins/" + name;
         URL url = new URL(apiUrl);
