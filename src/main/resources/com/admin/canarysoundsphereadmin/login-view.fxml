@@ -8,58 +8,63 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="main_panel" prefHeight="768.0" prefWidth="1024.0" stylesheets="@../../../assets/style/login.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.canarysoundsphereadmin.controllers.LoginController">
+<AnchorPane id="main_panel" maxHeight="768.0" maxWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" stylesheets="@../../../assets/style/login.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.canarysoundsphereadmin.controllers.LoginController">
    <children>
-      <ImageView fitHeight="768.0" fitWidth="643.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="794.0" fitWidth="602.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../assets/images/login_edit.jpeg" />
+            <Image url="@../../../assets/images/guitar.png" />
          </image>
       </ImageView>
-      <Label layoutX="657.0" layoutY="135.0" styleClass="login_title" text="O" textFill="WHITE">
+      <Label fx:id="title" layoutX="546.0" layoutY="117.0" styleClass="login_title" text="L" textFill="WHITE">
          <font>
-            <Font name="Arial Italic" size="48.0" />
+            <Font size="48.0" />
          </font>
       </Label>
-      <Label fx:id="title" layoutX="594.0" layoutY="95.0" styleClass="login_title" text="L" textFill="WHITE">
+      <Label layoutX="628.0" layoutY="157.0" styleClass="login_title2" text="O" textFill="WHITE">
          <font>
-            <Font name="Arial Italic" size="48.0" />
+            <Font size="48.0" />
          </font>
       </Label>
-      <TextField fx:id="nameTextField" layoutX="575.0" layoutY="319.0" prefHeight="40.0" prefWidth="400.0" promptText="Insert your user name" styleClass="input_Style">
+      <Label layoutX="710.0" layoutY="117.0" styleClass="login_title" text="G" textFill="WHITE">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="793.0" layoutY="157.0" styleClass="login_title2" text="I" textFill="WHITE">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="846.0" layoutY="117.0" styleClass="login_title" text="N" textFill="WHITE">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameTextField" layoutX="540.0" layoutY="349.0" prefHeight="43.0" prefWidth="400.0" promptText="Insert your user name" styleClass="input_Style">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <TextField fx:id="passwordTextField" layoutX="575.0" layoutY="382.0" prefHeight="40.0" prefWidth="400.0" promptText="Insert your user password" styleClass="input_Style">
+      <TextField fx:id="passwordTextField" layoutX="540.0" layoutY="412.0" prefHeight="43.0" prefWidth="400.0" promptText="Insert your user password" styleClass="input_Style">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <Button layoutX="575.0" layoutY="464.0" mnemonicParsing="false" onMouseClicked="#sendButton" prefHeight="40.0" prefWidth="400.0" styleClass="button_style" text="Enviar">
+      <Button layoutX="540.0" layoutY="496.0" mnemonicParsing="false" onMouseClicked="#sendButton" prefHeight="43.0" prefWidth="400.0" styleClass="button_style" text="Enviar">
          <font>
-            <Font name="Roboto Medium" size="36.0" />
+            <Font size="36.0" />
          </font></Button>
-      <Label layoutX="898.0" layoutY="737.0" styleClass="footer_text" text="Canary Sound Sphere">
+      <ImageView fitHeight="52.0" fitWidth="52.0" layoutX="800.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/icons/punto.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="52.0" fitWidth="52.0" layoutX="946.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/icons/dia-y-noche.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="865.0" layoutY="749.0" styleClass="footer_text" text="Canary Sound Sphere">
          <font>
             <Font name="System Italic" size="12.0" />
          </font></Label>
-      <Label layoutX="733.0" layoutY="95.0" styleClass="login_title" text="G" textFill="WHITE">
-         <font>
-            <Font name="Arial Italic" size="48.0" />
-         </font>
-      </Label>
-      <Label layoutX="827.0" layoutY="135.0" styleClass="login_title" text="I" textFill="WHITE">
-         <font>
-            <Font name="Arial Italic" size="48.0" />
-         </font>
-      </Label>
-      <Label layoutX="879.0" layoutY="95.0" styleClass="login_title" text="N" textFill="WHITE">
-         <font>
-            <Font name="Arial Italic" size="48.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="43.0" fitWidth="58.0" layoutX="822.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../assets/icons/llave.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>

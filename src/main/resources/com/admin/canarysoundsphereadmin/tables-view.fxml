@@ -29,17 +29,17 @@
                   </ImageView>
                   <TableView fx:id="eventsTable" layoutX="12.0" layoutY="15.0" opacity="0.8" prefHeight="630.0" prefWidth="1000.0">
                      <columns>
-                        <TableColumn fx:id="idEventsColumn" minWidth="85.0" prefWidth="85.0" text="Id" />
-                        <TableColumn fx:id="logoEventsColumn" minWidth="85.0" prefWidth="85.0" text="Logo" />
-                        <TableColumn fx:id="imageEventsColumn" minWidth="85.0" prefWidth="85.0" text="Imagen" />
-                        <TableColumn fx:id="nameEventsColumn" minWidth="85.0" prefWidth="85.0" text="Nombre" />
-                        <TableColumn fx:id="dateEventsColumn" minWidth="72.0" prefWidth="72.0" text="Fecha" />
-                        <TableColumn fx:id="timeEventsColumn" minWidth="72.0" prefWidth="75.0" text="Hora" />
-                        <TableColumn fx:id="capacityEventsColumn" minWidth="85.0" prefWidth="96.0" text="Capacidad" />
-                        <TableColumn fx:id="descriptionEventsColumn" minWidth="85.0" prefWidth="104.0" text="Descripcion" />
-                        <TableColumn fx:id="directionEventsColumn" minWidth="85.0" prefWidth="85.0" text="Direccion" />
-                        <TableColumn fx:id="markerEventsColumn" minWidth="85.0" prefWidth="88.0" text="Marcador" />
-                        <TableColumn fx:id="ticket_storeEventsColumn" minWidth="85.0" prefWidth="139.0" text="Tienda de tickets" />
+                        <TableColumn fx:id="idEventsColumn" minWidth="85.0" prefWidth="85.0" styleClass="tableColumn" text="Id" />
+                        <TableColumn fx:id="logoEventsColumn" minWidth="85.0" prefWidth="85.0" styleClass="tableColumn" text="Logo" />
+                        <TableColumn fx:id="imageEventsColumn" minWidth="85.0" prefWidth="85.0" styleClass="tableColumn" text="Imagen" />
+                        <TableColumn fx:id="nameEventsColumn" minWidth="85.0" prefWidth="85.0" styleClass="tableColumn" text="Nombre" />
+                        <TableColumn fx:id="dateEventsColumn" minWidth="72.0" prefWidth="72.0" styleClass="tableColumn" text="Fecha" />
+                        <TableColumn fx:id="timeEventsColumn" minWidth="72.0" prefWidth="75.0" styleClass="tableColumn" text="Hora" />
+                        <TableColumn fx:id="capacityEventsColumn" minWidth="85.0" prefWidth="96.0" styleClass="tableColumn" text="Capacidad" />
+                        <TableColumn fx:id="descriptionEventsColumn" minWidth="85.0" prefWidth="104.0" styleClass="tableColumn" text="Descripcion" />
+                        <TableColumn fx:id="directionEventsColumn" minWidth="85.0" prefWidth="85.0" styleClass="tableColumn" text="Direccion" />
+                        <TableColumn fx:id="markerEventsColumn" minWidth="85.0" prefWidth="88.0" styleClass="tableColumn" text="Marcador" />
+                        <TableColumn fx:id="ticket_storeEventsColumn" minWidth="85.0" prefWidth="139.0" styleClass="tableColumn" text="Tienda de tickets" />
                      </columns>
                   </TableView>
                   <HBox alignment="CENTER_RIGHT" layoutX="12.0" layoutY="660.0" prefHeight="70.0" prefWidth="1000.0" spacing="40.0">
@@ -70,13 +70,13 @@
                   </ImageView>
                   <TableView fx:id="authorsTable" layoutX="11.0" layoutY="15.0" opacity="0.8" prefHeight="630.0" prefWidth="1000.0">
                      <columns>
-                        <TableColumn fx:id="idAuthorsColumn" minWidth="100.0" prefWidth="100.0" text="Id" />
-                        <TableColumn fx:id="nameAuthorsColumn" minWidth="140.0" prefWidth="145.0" text="Nombre" />
-                        <TableColumn fx:id="imageAuthorsColumn" minWidth="125.0" prefWidth="125.0" text="Imagen" />
-                        <TableColumn fx:id="foundation_yearAuthorsColumn" minWidth="140.0" prefWidth="165.0" text="Año de fundacion" />
-                        <TableColumn fx:id="music_typeAuthorsColumn" minWidth="140.0" prefWidth="145.0" text="Tipo de musica" />
-                        <TableColumn fx:id="descriptionAuthorsColumn" minWidth="119.0" prefWidth="153.0" text="Descripcion" />
-                        <TableColumn fx:id="music_listAuthorsColumn" minWidth="140.0" prefWidth="171.0" text="Lista de canciones" />
+                        <TableColumn fx:id="idAuthorsColumn" minWidth="100.0" prefWidth="100.0" styleClass="tableColumn" text="Id" />
+                        <TableColumn fx:id="nameAuthorsColumn" minWidth="140.0" prefWidth="145.0" styleClass="tableColumn" text="Nombre" />
+                        <TableColumn fx:id="imageAuthorsColumn" minWidth="125.0" prefWidth="125.0" styleClass="tableColumn" text="Imagen" />
+                        <TableColumn fx:id="foundation_yearAuthorsColumn" minWidth="140.0" prefWidth="165.0" styleClass="tableColumn" text="Año de fundacion" />
+                        <TableColumn fx:id="music_typeAuthorsColumn" minWidth="140.0" prefWidth="145.0" styleClass="tableColumn" text="Tipo de musica" />
+                        <TableColumn fx:id="descriptionAuthorsColumn" minWidth="119.0" prefWidth="153.0" styleClass="tableColumn" text="Descripcion" />
+                        <TableColumn fx:id="music_listAuthorsColumn" minWidth="140.0" prefWidth="171.0" styleClass="tableColumn" text="Lista de canciones" />
                      </columns>
                   </TableView>
                   <HBox alignment="CENTER_RIGHT" layoutX="12.0" layoutY="660.0" prefHeight="70.0" prefWidth="1000.0" spacing="40.0">

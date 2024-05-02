@@ -2,60 +2,46 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="419.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.canarysoundsphereadmin.controllers.InsertAuthorController">
+<AnchorPane id="main_panel" prefHeight="768.0" prefWidth="1024.0" stylesheets="@../../../assets/style/InsertAuthor.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.canarysoundsphereadmin.controllers.InsertAuthorController">
    <children>
-      <Label fx:id="title" layoutX="111.0" layoutY="14.0" text="Insertar Autor">
-         <font>
-            <Font size="28.0" />
-         </font>
-      </Label>
-      <VBox layoutX="77.0" layoutY="54.0" prefHeight="326.0" prefWidth="238.0" spacing="10.0">
+      <Pane layoutX="50.0" layoutY="58.0" prefHeight="653.0" prefWidth="925.0" styleClass="paneContent">
          <children>
-            <VBox prefHeight="27.0" prefWidth="198.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
-                  <TextField fx:id="nameTextField" prefHeight="26.0" prefWidth="198.0" />
-               </children>
-            </VBox>
-            <VBox prefHeight="27.0" prefWidth="198.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Imagen" />
-                  <TextField fx:id="imageTextField" prefHeight="26.0" prefWidth="198.0" />
-               </children>
-            </VBox>
-            <VBox prefHeight="27.0" prefWidth="198.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Año de fundacion" />
-                  <TextField fx:id="foundationYearTextField" prefHeight="26.0" prefWidth="198.0" />
-               </children>
-            </VBox>
-            <VBox prefHeight="27.0" prefWidth="198.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de musica" />
-                  <TextField fx:id="musicTypeTextField" prefHeight="26.0" prefWidth="198.0" />
-               </children>
-            </VBox>
-            <VBox prefHeight="27.0" prefWidth="198.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Descripcion" />
-                  <TextField fx:id="descriptionTextField" prefHeight="26.0" prefWidth="198.0" />
-               </children>
-            </VBox>
-            <VBox prefHeight="27.0" prefWidth="198.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de canciones" />
-                  <TextField fx:id="songsListsTextFields" prefHeight="26.0" prefWidth="198.0" />
-               </children>
-            </VBox>
+            <ImageView fitHeight="226.0" fitWidth="213.0" layoutX="593.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/icons/dance.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="nameTextField" layoutX="33.0" layoutY="14.0" prefHeight="40.0" prefWidth="400.0" promptText="Nombre" styleClass="input_Style" />
+            <TextField fx:id="imageTextField" layoutX="33.0" layoutY="62.0" prefHeight="40.0" prefWidth="400.0" promptText="Imagen" styleClass="input_Style" />
+            <TextField fx:id="foundationYearTextField" layoutX="33.0" layoutY="111.0" prefHeight="40.0" prefWidth="400.0" promptText="Año de fundación" styleClass="input_Style" />
+            <TextField fx:id="musicTypeTextField" layoutX="495.0" layoutY="14.0" prefHeight="40.0" prefWidth="400.0" promptText="Género musical" styleClass="input_Style" />
+            <TextField fx:id="descriptionTextField" layoutX="33.0" layoutY="162.0" prefHeight="120.0" prefWidth="400.0" promptText="Descripción" styleClass="input_Style" />
+            <TextField fx:id="songsListsTextFields" layoutX="495.0" layoutY="62.0" prefHeight="40.0" prefWidth="400.0" promptText="Listas" styleClass="input_Style" />
+            <ImageView fitHeight="302.0" fitWidth="585.0" layoutX="2.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/images/to_dance.jpg" />
+               </image>
+            </ImageView>
+            <TextArea layoutX="582.0" layoutY="350.0" prefHeight="302.0" prefWidth="343.0" styleClass="textarea_style" />
+            <Label fx:id="title" layoutX="85.0" layoutY="438.0" opacity="0.8" styleClass="title" text="AUTORES">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nameTextField1" layoutX="495.0" layoutY="295.0" prefHeight="40.0" prefWidth="281.0" promptText="Buscar por id" styleClass="input_Style" />
+            <Button layoutX="785.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#sendButtonClicked" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Buscar" />
+            <Button layoutX="178.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#sendButtonClicked" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Enviar" />
+            <Button layoutX="323.0" layoutY="295.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Limpiar" />
+            <Button layoutX="33.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#exitButtonClicked" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Salir" />
          </children>
-      </VBox>
-      <Button layoutX="315.0" layoutY="380.0" mnemonicParsing="false" onMouseClicked="#sendButtonClicked" text="Enviar" />
-      <Button layoutX="37.0" layoutY="379.0" mnemonicParsing="false" onMouseClicked="#exitButtonClicked" text="Salir" />
+      </Pane>
    </children>
 </AnchorPane>
