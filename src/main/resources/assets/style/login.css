@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Pacifico';
+    src: url('../fonts/Pacifico-Regular.ttf');
+}
+@font-face {
+    font-family: 'Roboto Medium';
+    src: url('../fonts/Roboto-Medium.ttf');
+}
 .root {
   -fx-font-size: 16px;
   -fx-font-weight: 600;

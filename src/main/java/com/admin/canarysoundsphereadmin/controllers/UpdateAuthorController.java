@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers.cambiarScene;
@@ -14,12 +15,11 @@ import static com.admin.canarysoundsphereadmin.models.DBManager.updateAuthorFiel
 import static com.admin.canarysoundsphereadmin.models.DBManager.updateEventFieldById;
 
 public class UpdateAuthorController {
+    public TextArea newValueTextArea;
     @FXML
     private Label title;
     @FXML
     private ComboBox fieldsComboBox;
-    @FXML
-    private TextField newValueTextField;
     public void initialize(){
         ObservableList<String> fields = FXCollections.observableArrayList(
                 "Name", "Image", "Foundation_year", "Music_type", "Description", "Music_list"
@@ -31,7 +31,7 @@ public class UpdateAuthorController {
 
     public void sendButtonClicked(){
         String fieldName = (String) fieldsComboBox.getValue();
-        String newValue = newValueTextField.getText();
+        String newValue = newValueTextArea.getText();
         System.out.println(fieldName);
         if (fieldName != null && !newValue.isEmpty()) {
             boolean updated = updateAuthorFieldById(authorId, fieldName.toLowerCase(), newValue);

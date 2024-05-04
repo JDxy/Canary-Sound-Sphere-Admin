@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'Roboto Medium';
+    src: url('../fonts/Roboto-Medium.ttf');
+}
 .root {
   -fx-font-size: 16px;
   -fx-font-weight: 600;

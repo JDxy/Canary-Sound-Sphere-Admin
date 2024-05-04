@@ -15,44 +15,44 @@
             <Image url="@../../../assets/images/guitar.png" />
          </image>
       </ImageView>
-      <Label fx:id="title" layoutX="546.0" layoutY="117.0" styleClass="login_title" text="L" textFill="WHITE">
+      <Label fx:id="title" layoutX="556.0" layoutY="122.0" styleClass="login_title" text="L" textFill="WHITE">
          <font>
-            <Font size="48.0" />
+            <Font name="Pacifico Regular" size="48.0" />
          </font>
       </Label>
-      <Label layoutX="628.0" layoutY="157.0" styleClass="login_title2" text="O" textFill="WHITE">
+      <Label layoutX="624.0" layoutY="157.0" styleClass="login_title2" text="O" textFill="WHITE">
          <font>
-            <Font size="48.0" />
+            <Font name="Pacifico Regular" size="48.0" />
          </font>
       </Label>
-      <Label layoutX="710.0" layoutY="117.0" styleClass="login_title" text="G" textFill="WHITE">
+      <Label layoutX="704.0" layoutY="122.0" styleClass="login_title" text="G" textFill="WHITE">
          <font>
-            <Font size="48.0" />
+            <Font name="Pacifico Regular" size="48.0" />
          </font>
       </Label>
-      <Label layoutX="793.0" layoutY="157.0" styleClass="login_title2" text="I" textFill="WHITE">
+      <Label layoutX="788.0" layoutY="157.0" styleClass="login_title2" text="I" textFill="WHITE">
          <font>
-            <Font size="48.0" />
+            <Font name="Pacifico Regular" size="48.0" />
          </font>
       </Label>
-      <Label layoutX="846.0" layoutY="117.0" styleClass="login_title" text="N" textFill="WHITE">
+      <Label layoutX="836.0" layoutY="122.0" styleClass="login_title" text="N" textFill="WHITE">
          <font>
-            <Font size="48.0" />
+            <Font name="Pacifico Regular" size="48.0" />
          </font>
       </Label>
-      <TextField fx:id="nameTextField" layoutX="540.0" layoutY="349.0" prefHeight="43.0" prefWidth="400.0" promptText="Insert your user name" styleClass="input_Style">
+      <TextField fx:id="nameTextField" layoutX="540.0" layoutY="349.0" prefHeight="40.0" prefWidth="400.0" promptText="Inserte su nombre de usuario" styleClass="input_Style">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <TextField fx:id="passwordTextField" layoutX="540.0" layoutY="412.0" prefHeight="43.0" prefWidth="400.0" promptText="Insert your user password" styleClass="input_Style">
+      <TextField fx:id="passwordTextField" layoutX="540.0" layoutY="412.0" prefHeight="40.0" prefWidth="400.0" promptText="Inserte su contraseña" styleClass="input_Style">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <Button layoutX="540.0" layoutY="496.0" mnemonicParsing="false" onMouseClicked="#sendButton" prefHeight="43.0" prefWidth="400.0" styleClass="button_style" text="Enviar">
+      <Button layoutX="540.0" layoutY="496.0" mnemonicParsing="false" onMouseClicked="#sendButton" prefHeight="40.0" prefWidth="400.0" styleClass="button_style" text="Enviar">
          <font>
             <Font size="36.0" />
          </font></Button>
-      <ImageView fitHeight="52.0" fitWidth="52.0" layoutX="800.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="52.0" fitWidth="52.0" layoutX="787.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/icons/punto.png" />
          </image>

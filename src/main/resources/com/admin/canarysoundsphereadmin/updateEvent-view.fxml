@@ -3,25 +3,44 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="233.0" prefWidth="427.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.canarysoundsphereadmin.controllers.UpdateEventController">
+<AnchorPane id="main_panel" prefHeight="768.0" prefWidth="1024.0" stylesheets="@../../../assets/style/update.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.canarysoundsphereadmin.controllers.UpdateEventController">
    <children>
-      <HBox alignment="CENTER" layoutX="58.0" layoutY="81.0" prefHeight="36.0" prefWidth="310.0" spacing="20.0">
+      <Pane layoutX="39.0" layoutY="41.0" prefHeight="686.0" prefWidth="946.0" styleClass="paneContent">
          <children>
-            <ComboBox fx:id="fieldsComboBox" prefWidth="150.0" />
-            <TextField fx:id="newValueTextField" />
+            <TextArea layoutX="14.0" layoutY="359.0" prefHeight="250.0" prefWidth="486.0" styleClass="textarea_style" />
+            <ComboBox fx:id="fieldsComboBox" layoutX="14.0" layoutY="281.0" prefHeight="40.0" prefWidth="385.0" promptText="Seleccione el campo a actualizar" styleClass="comb_style" />
+            <Button layoutX="400.0" layoutY="281.0" mnemonicParsing="false" onMouseClicked="#sendButtonClicked" prefHeight="40.0" prefWidth="100.0" styleClass="button_style" text="Enviar" />
+            <Button layoutX="14.0" layoutY="616.0" mnemonicParsing="false" onMouseClicked="#exitButtonClicked" prefHeight="40.0" prefWidth="100.0" styleClass="button_style" text="Salir" />
+            <TextArea fx:id="newValueTextArea" layoutX="14.0" layoutY="30.0" prefHeight="250.0" prefWidth="486.0" styleClass="textarea_style" />
+            <Label layoutX="14.0" layoutY="336.0" styleClass="label_style" text="Eventos Actualizados:" />
+            <Label layoutX="14.0" layoutY="7.0" styleClass="label_style" text="Datos Modificados:" />
+            <Pane layoutX="511.0" layoutY="30.0" prefHeight="418.0" prefWidth="414.0" styleClass="image_pane">
+               <children>
+                  <ImageView fitHeight="414.0" fitWidth="400.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../assets/images/colourManImage.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="70.0" fitWidth="64.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../assets/icons/tratamiento.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="title" layoutX="5.0" layoutY="303.0" opacity="0.9" styleClass="title" stylesheets="@../../../assets/style/update.css" text="EVENTOS">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
          </children>
-      </HBox>
-      <Label fx:id="title" layoutX="125.0" layoutY="14.0" text="Actualizar evento">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Label>
-      <Button layoutX="58.0" layoutY="178.0" mnemonicParsing="false" onMouseClicked="#exitButtonClicked" text="Salir" />
-      <Button layoutX="316.0" layoutY="178.0" mnemonicParsing="false" onMouseClicked="#sendButtonClicked" text="Enviar" />
+      </Pane>
    </children>
 </AnchorPane>

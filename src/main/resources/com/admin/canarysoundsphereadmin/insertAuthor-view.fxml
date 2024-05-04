@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="main_panel" prefHeight="768.0" prefWidth="1024.0" stylesheets="@../../../assets/style/InsertAuthor.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.canarysoundsphereadmin.controllers.InsertAuthorController">
+<AnchorPane id="main_panel" prefHeight="768.0" prefWidth="1024.0" stylesheets="@../../../assets/style/Inserts.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.canarysoundsphereadmin.controllers.InsertAuthorController">
    <children>
       <Pane layoutX="50.0" layoutY="58.0" prefHeight="653.0" prefWidth="925.0" styleClass="paneContent">
          <children>

@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Roboto Medium';
+    src: url('../fonts/Roboto-Medium.ttf');
+}
+@font-face {
+    font-family: 'Roboto Bold';
+    src: url('../fonts/Roboto-Bold.ttf');
+}
 .root {
   -fx-font-size: 16px;
   -fx-font-weight: 700;
@@ -7,20 +15,18 @@
 #main_panel {
     -fx-background-color: rgba(0, 0, 0, 0.9);
 }
-
 .paneContent{
     -fx-background-color:#8ECAE6;
     -fx-border-width:2px;
     -fx-border-color:grey;
 }
 .title {
-   -fx-font-family: "Roboto-Bold";
+   -fx-font-family: "Roboto Bold";
    -fx-text-fill: white;
    -fx-font-size: 90px;
    -fx-font-weight: 700;
    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.9), 5,0.4,6,2);
 }
-
 .input_Style, .button_style{
      -fx-font-size: 18px;
      -fx-border-radius: 5px;
@@ -30,7 +36,6 @@
      -fx-background-color: white;
      -fx-text-fill: black;
 }
-
 .button_style{
     -fx-background-color: rgba(0, 0, 0, 0.9);
     -fx-text-fill: white;
