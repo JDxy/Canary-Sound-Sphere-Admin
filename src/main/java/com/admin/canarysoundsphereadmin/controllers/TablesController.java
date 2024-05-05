@@ -1,8 +1,6 @@
 package com.admin.canarysoundsphereadmin.controllers;
 
-import com.admin.canarysoundsphereadmin.models.Author;
-import com.admin.canarysoundsphereadmin.models.DBManager;
-import com.admin.canarysoundsphereadmin.models.EventClass;
+import com.admin.canarysoundsphereadmin.models.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -11,14 +9,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.json.JSONException;
-
 import java.io.IOException;
-
 import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers.cambiarScene;
-import static com.admin.canarysoundsphereadmin.models.DBManager.*;
+import static com.admin.canarysoundsphereadmin.models.AuthorManager.deleteAuthorById;
+import static com.admin.canarysoundsphereadmin.models.EventManager.*;
 
 public class TablesController {
-// Events table
+    // Events table
     @FXML
     private Label eventsTitle;
 
@@ -104,7 +101,7 @@ public class TablesController {
 
         ObservableList<EventClass> events = FXCollections.observableArrayList();
         try {
-            events.addAll(DBManager.getAllEvents());
+            events.addAll(EventManager.getAllEvents());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -121,8 +118,9 @@ public class TablesController {
         music_listAuthorsColumn.setCellValueFactory(new PropertyValueFactory<>("music_list"));
 
         ObservableList<Author> authors = FXCollections.observableArrayList();
+
         try {
-            authors.addAll(DBManager.getAllAuthors());
+            authors.addAll(AuthorManager.getAllAuthors());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -150,11 +148,11 @@ public class TablesController {
 
         if(selectedAuthor != null) {
             authorId = selectedAuthor.get_id();
-            boolean deleted = deleteAuthorById(authorId);
+            boolean deleted = deleteAuthorById(authorId, LoginController.token);
             if(deleted) {
                 try {
                     ObservableList<Author> authors = FXCollections.observableArrayList();
-                    authors.addAll(DBManager.getAllAuthors());
+                    authors.addAll(AuthorManager.getAllAuthors());
                     authorsTable.setItems(authors);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -188,11 +186,11 @@ public class TablesController {
 
         if(selectedEvent != null) {
             eventId = selectedEvent.get_id();
-            boolean deleted = deleteEventById(eventId);
+            boolean deleted = deleteEventById(eventId, LoginController.token);
             if(deleted) {
                 try {
                     ObservableList<EventClass> events = FXCollections.observableArrayList();
-                    events.addAll(DBManager.getAllEvents());
+                    events.addAll(EventManager.getAllEvents());
                     eventsTable.setItems(events);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -204,5 +202,4 @@ public class TablesController {
             System.out.println("Por favor, selecciona un evento para eliminar.");
         }
     }
-
 }

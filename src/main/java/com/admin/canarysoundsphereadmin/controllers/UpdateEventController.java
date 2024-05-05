@@ -6,11 +6,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-
 import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers.cambiarScene;
 import static com.admin.canarysoundsphereadmin.controllers.TablesController.eventId;
-import static com.admin.canarysoundsphereadmin.models.DBManager.updateEventFieldById;
+import static com.admin.canarysoundsphereadmin.models.EventManager.updateEventFieldById;
 
 public class UpdateEventController {
     public TextArea newValueTextArea;
@@ -34,7 +32,7 @@ public class UpdateEventController {
         String newValue = newValueTextArea.getText();
         System.out.println(fieldName);
         if (fieldName != null && !newValue.isEmpty()) {
-            boolean updated = updateEventFieldById(eventId, fieldName.toLowerCase(), newValue);
+            boolean updated = updateEventFieldById(eventId, fieldName.toLowerCase(), newValue,LoginController.token);
             if (updated) {
                 cambiarScene("/com/admin/canarysoundsphereadmin/tables-view.fxml", "Tablas", title);
             } else {

@@ -8,7 +8,6 @@ public class Author {
     private String description;
     private String music_list;
 
-
     public Author(String _id, String name, String image, int foundation_year, String music_type, String description, String music_list) {
         this._id = _id;
         this.name = name;
