@@ -106,6 +106,48 @@ public class EventManager {
         }
     }
 
+    public static EventClass getEventById(String eventId) {
+        try {
+            String apiUrl = "http://localhost:9006/events/" + eventId;
+            URL url = new URL(apiUrl);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+
+            int status = con.getResponseCode();
+            if (status == HttpURLConnection.HTTP_OK) {
+                BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                String inputLine;
+                StringBuilder content = new StringBuilder();
+                while ((inputLine = in.readLine()) != null) {
+                    content.append(inputLine);
+                }
+                in.close();
+
+                JSONObject eventJson = new JSONObject(content.toString());
+                EventClass event = new EventClass(
+                        eventJson.getString("_id"),
+                        eventJson.getString("logo"),
+                        eventJson.getString("image"),
+                        eventJson.getString("name"),
+                        eventJson.getString("date"),
+                        eventJson.getString("time"),
+                        eventJson.getInt("capacity"),
+                        eventJson.getString("description"),
+                        eventJson.getString("direction"),
+                        eventJson.getString("marker"),
+                        eventJson.getString("ticket_store")
+                );
+                return event;
+            } else {
+                System.out.println("Error al conectar con la API: " + status);
+            }
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+            System.out.println("Error al obtener el evento desde la base de datos.");
+        }
+        return null;
+    }
+
     public static String idEventPlusOne(){
         try {
             List<EventClass> events = EventManager.getAllEvents();

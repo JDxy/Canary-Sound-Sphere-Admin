@@ -30,16 +30,16 @@
                   <Image url="@../../../assets/images/to_dance.jpg" />
                </image>
             </ImageView>
-            <TextArea layoutX="582.0" layoutY="350.0" prefHeight="302.0" prefWidth="343.0" styleClass="textarea_style" />
+            <TextArea fx:id="showAuthor" editable="false" layoutX="582.0" layoutY="350.0" prefHeight="302.0" prefWidth="343.0" styleClass="textarea_style" />
             <Label fx:id="title" layoutX="85.0" layoutY="438.0" opacity="0.8" styleClass="title" text="AUTORES">
                <font>
                   <Font size="28.0" />
                </font>
             </Label>
-            <TextField fx:id="nameTextField1" layoutX="495.0" layoutY="295.0" prefHeight="40.0" prefWidth="281.0" promptText="Buscar por id" styleClass="input_Style" />
-            <Button layoutX="785.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#sendButtonClicked" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Buscar" />
+            <TextField fx:id="search_by_id" layoutX="495.0" layoutY="295.0" prefHeight="40.0" prefWidth="281.0" promptText="Buscar por id" styleClass="input_Style" />
+            <Button layoutX="785.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#search_by_id_button" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Buscar" />
             <Button layoutX="178.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#sendButtonClicked" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Enviar" />
-            <Button layoutX="323.0" layoutY="295.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Limpiar" />
+            <Button layoutX="323.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#clean_button" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Limpiar" />
             <Button layoutX="33.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#exitButtonClicked" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Salir" />
          </children>
       </Pane>

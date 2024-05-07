@@ -1,5 +1,7 @@
 package com.admin.canarysoundsphereadmin.controllers;
 
+import com.admin.canarysoundsphereadmin.models.EventClass;
+import com.admin.canarysoundsphereadmin.models.EventManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -11,7 +13,10 @@ import static com.admin.canarysoundsphereadmin.controllers.TablesController.even
 import static com.admin.canarysoundsphereadmin.models.EventManager.updateEventFieldById;
 
 public class UpdateEventController {
+    @FXML
     public TextArea newValueTextArea;
+    @FXML
+    public TextArea showEventUpdated;
     @FXML
     private Label title;
     @FXML
@@ -34,12 +39,37 @@ public class UpdateEventController {
         if (fieldName != null && !newValue.isEmpty()) {
             boolean updated = updateEventFieldById(eventId, fieldName.toLowerCase(), newValue,LoginController.token);
             if (updated) {
-                cambiarScene("/com/admin/canarysoundsphereadmin/tables-view.fxml", "Tablas", title);
+                System.out.println("El evento se ha actualizado correctamente.");
+                searchUpdateEvent();
             } else {
                 System.out.println("Error al actualizar el campo del evento.");
             }
         } else {
             System.out.println("Por favor, selecciona un campo y proporciona un nuevo valor.");
+        }
+    }
+
+    public void searchUpdateEvent(){
+        String eventId = TablesController.eventId;
+        EventClass foundEvent = EventManager.getEventById(eventId);
+
+        if (foundEvent != null) {
+            StringBuilder eventText = new StringBuilder();
+            eventText.append("ID: ").append(foundEvent.get_id()).append("\n");
+            eventText.append("Logo: ").append(foundEvent.getLogo()).append("\n");
+            eventText.append("Image: ").append(foundEvent.getImage()).append("\n");
+            eventText.append("Name: ").append(foundEvent.getName()).append("\n");
+            eventText.append("Date: ").append(foundEvent.getDate()).append("\n");
+            eventText.append("Time: ").append(foundEvent.getTime()).append("\n");
+            eventText.append("Capacity: ").append(foundEvent.getCapacity()).append("\n");
+            eventText.append("Description: ").append(foundEvent.getDescription()).append("\n");
+            eventText.append("Direction: ").append(foundEvent.getDirection()).append("\n");
+            eventText.append("Marker: ").append(foundEvent.getMarker()).append("\n");
+            eventText.append("Ticket Store: ").append(foundEvent.getTicket_store()).append("\n\n");
+
+            showEventUpdated.setText(eventText.toString());
+        } else {
+            showEventUpdated.setText("Evento no encontrado.");
         }
     }
 }

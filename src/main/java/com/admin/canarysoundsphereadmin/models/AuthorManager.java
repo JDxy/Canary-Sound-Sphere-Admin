@@ -98,6 +98,44 @@ public class AuthorManager {
         }
     }
 
+    public static Author getAuthorById(String authorId) {
+        try {
+            String apiUrl = "http://localhost:9006/authors/" + authorId;
+            URL url = new URL(apiUrl);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+
+            int status = con.getResponseCode();
+            if (status == HttpURLConnection.HTTP_OK) {
+                BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                String inputLine;
+                StringBuilder content = new StringBuilder();
+                while ((inputLine = in.readLine()) != null) {
+                    content.append(inputLine);
+                }
+                in.close();
+
+                JSONObject authorJson = new JSONObject(content.toString());
+                Author author = new Author(
+                        authorJson.getString("_id"),
+                        authorJson.getString("name"),
+                        authorJson.getString("image"),
+                        authorJson.getInt("foundation_year"),
+                        authorJson.getString("music_type"),
+                        authorJson.getString("description"),
+                        authorJson.getString("music_list")
+                );
+                return author;
+            } else {
+                System.out.println("Error al conectar con la API: " + status);
+            }
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+            System.out.println("Error al obtener el autor desde la base de datos.");
+        }
+        return null;
+    }
+
     public static String idAuthorPlusOne(){
         try {
             List<Author> authors = AuthorManager.getAllAuthors();

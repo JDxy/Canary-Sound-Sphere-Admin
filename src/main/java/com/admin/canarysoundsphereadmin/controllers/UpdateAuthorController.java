@@ -1,5 +1,7 @@
 package com.admin.canarysoundsphereadmin.controllers;
 
+import com.admin.canarysoundsphereadmin.models.Author;
+import com.admin.canarysoundsphereadmin.models.AuthorManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -12,6 +14,7 @@ import static com.admin.canarysoundsphereadmin.models.AuthorManager.updateAuthor
 
 public class UpdateAuthorController {
     public TextArea newValueTextArea;
+    public TextArea showAuthorUpdated;
     @FXML
     private Label title;
     @FXML
@@ -32,12 +35,33 @@ public class UpdateAuthorController {
         if (fieldName != null && !newValue.isEmpty()) {
             boolean updated = updateAuthorFieldById(authorId, fieldName.toLowerCase(), newValue, LoginController.token);
             if (updated) {
-                cambiarScene("/com/admin/canarysoundsphereadmin/tables-view.fxml", "Tablas", title);
+                System.out.println("El autor se ha actualizado correctamente.");
+                searchUpdateAuthor();
             } else {
                 System.out.println("Error al actualizar el campo del evento.");
             }
         } else {
             System.out.println("Por favor, selecciona un campo y proporciona un nuevo valor.");
+        }
+    }
+
+    public void searchUpdateAuthor() {
+        String authorId = TablesController.authorId;
+        Author foundAuthor = AuthorManager.getAuthorById(authorId);
+
+        if (foundAuthor != null) {
+            StringBuilder authorText = new StringBuilder();
+            authorText.append("ID: ").append(foundAuthor.get_id()).append("\n");
+            authorText.append("Logo: ").append(foundAuthor.getName()).append("\n");
+            authorText.append("Image: ").append(foundAuthor.getImage()).append("\n");
+            authorText.append("Name: ").append(foundAuthor.getFoundation_year()).append("\n");
+            authorText.append("Date: ").append(foundAuthor.getMusic_type()).append("\n");
+            authorText.append("Time: ").append(foundAuthor.getDescription()).append("\n");
+            authorText.append("Ticket Store: ").append(foundAuthor.getMusic_list()).append("\n\n");
+
+            showAuthorUpdated.setText(authorText.toString());
+        } else {
+            showAuthorUpdated.setText("No se encontraron resultados.");
         }
     }
 }

@@ -31,10 +31,10 @@
                   <Image url="@../../../assets/images/concert.jpg" />
                </image>
             </ImageView>
-            <TextArea layoutX="14.0" layoutY="411.0" prefHeight="175.0" prefWidth="472.0" style="-fx-background-color: black;" styleClass="textarea_style" />
-            <TextField layoutX="14.0" layoutY="362.0" maxHeight="40.0" maxWidth="458.0" prefHeight="40.0" prefWidth="354.0" promptText="Buscar por id" styleClass="input_Style" />
-            <Button layoutX="388.0" layoutY="362.0" minHeight="40.0" minWidth="100.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" styleClass="button_style" text="Buscar" />
-            <Button layoutX="796.0" layoutY="599.0" minHeight="40.0" minWidth="110.0" mnemonicParsing="false" onMouseClicked="#exitButtonClicked" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Limpiar" />
+            <TextArea fx:id="showEvent" editable="false" layoutX="14.0" layoutY="411.0" prefHeight="175.0" prefWidth="472.0" style="-fx-background-color: black;" styleClass="textarea_style" />
+            <TextField fx:id="search_by_id" layoutX="14.0" layoutY="362.0" maxHeight="40.0" maxWidth="458.0" prefHeight="40.0" prefWidth="354.0" promptText="Buscar por id" styleClass="input_Style" />
+            <Button layoutX="388.0" layoutY="362.0" minHeight="40.0" minWidth="100.0" mnemonicParsing="false" onMouseClicked="#search_by_id_button" prefHeight="40.0" prefWidth="100.0" styleClass="button_style" text="Buscar" />
+            <Button layoutX="796.0" layoutY="599.0" minHeight="40.0" minWidth="110.0" mnemonicParsing="false" onMouseClicked="#clean_button" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Limpiar" />
             <Label fx:id="title" layoutX="46.0" layoutY="109.0" opacity="0.8" styleClass="title" text="EVENTOS" textFill="WHITE">
                <font>
                   <Font name="Roboto Bold" size="36.0" />
