@@ -54,11 +54,6 @@
             <Image url="@../../../assets/icons/punto.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="52.0" fitWidth="52.0" layoutX="946.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../assets/icons/dia-y-noche.png" />
-         </image>
-      </ImageView>
       <Label layoutX="865.0" layoutY="749.0" styleClass="footer_text" text="Canary Sound Sphere">
          <font>
             <Font name="System Italic" size="12.0" />

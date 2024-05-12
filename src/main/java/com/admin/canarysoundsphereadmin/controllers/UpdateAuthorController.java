@@ -5,10 +5,12 @@ import com.admin.canarysoundsphereadmin.models.AuthorManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers.cambiarScene;
+import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers.showAlert;
 import static com.admin.canarysoundsphereadmin.controllers.TablesController.authorId;
 import static com.admin.canarysoundsphereadmin.models.AuthorManager.updateAuthorFieldById;
 
@@ -35,13 +37,13 @@ public class UpdateAuthorController {
         if (fieldName != null && !newValue.isEmpty()) {
             boolean updated = updateAuthorFieldById(authorId, fieldName.toLowerCase(), newValue, LoginController.token);
             if (updated) {
-                System.out.println("El autor se ha actualizado correctamente.");
+                showAlert("Éxito","El autor se ha actualizado correctamente.", Alert.AlertType.ERROR);
                 searchUpdateAuthor();
             } else {
-                System.out.println("Error al actualizar el campo del evento.");
+                showAlert("Error","Error al actualizar el campo del evento.", Alert.AlertType.ERROR);
             }
         } else {
-            System.out.println("Por favor, selecciona un campo y proporciona un nuevo valor.");
+            showAlert("Error","Por favor, selecciona un campo y proporciona un nuevo valor.", Alert.AlertType.ERROR);
         }
     }
 

@@ -4,6 +4,7 @@ import com.admin.canarysoundsphereadmin.models.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -11,6 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import org.json.JSONException;
 import java.io.IOException;
 import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers.cambiarScene;
+import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers.showAlert;
 import static com.admin.canarysoundsphereadmin.models.AuthorManager.deleteAuthorById;
 import static com.admin.canarysoundsphereadmin.models.EventManager.*;
 
@@ -83,7 +85,6 @@ public class TablesController {
     public static String eventId;
 
     public static String authorId;
-
     @FXML
     protected void initialize() throws JSONException, IOException {
         // Add content event table
@@ -129,17 +130,21 @@ public class TablesController {
     }
 
     public void insertAuthorButtonClicked(){
-        cambiarScene("/com/admin/canarysoundsphereadmin/insertAuthor-view.fxml", "Insertar evento", eventsTitle);
+        EventClass selectedEvent = eventsTable.getSelectionModel().getSelectedItem();
+        if(selectedEvent != null) {
+            cambiarScene("/com/admin/canarysoundsphereadmin/insertAuthor-view.fxml", "Insertar evento", eventsTitle);
+        }else {
+            showAlert("Error","Selecciona un autor", Alert.AlertType.ERROR);
+        }
     }
 
     public void updateAuthorButtonClicked(){
         Author selectedAuthor = authorsTable.getSelectionModel().getSelectedItem();
-
         if(selectedAuthor != null) {
             authorId = selectedAuthor.get_id();
             cambiarScene("/com/admin/canarysoundsphereadmin/updateAuthor-view.fxml", "Actualizar autor", eventsTitle);
         } else {
-            System.out.println("Por favor, selecciona un evento para eliminar.");
+            showAlert("Error","Selecciona un autor", Alert.AlertType.ERROR);
         }
     }
 
@@ -158,32 +163,36 @@ public class TablesController {
                     e.printStackTrace();
                 }
             } else {
-                System.out.println("Error al eliminar el evento.");
+                showAlert("Error","Error al eliminar el autor", Alert.AlertType.ERROR);
             }
         } else {
-            System.out.println("Por favor, selecciona un evento para eliminar.");
+            showAlert("Error","Selecciona un autor", Alert.AlertType.ERROR);
         }
     }
 
     public void insertEventButtonClicked(){
-        cambiarScene("/com/admin/canarysoundsphereadmin/insertEvent-view.fxml", "Insertar evento", eventsTitle);
+        EventClass selectedEvent = eventsTable.getSelectionModel().getSelectedItem();
+        if(selectedEvent != null) {
+            cambiarScene("/com/admin/canarysoundsphereadmin/insertEvent-view.fxml", "Insertar evento", eventsTitle);
+
+        }else {
+            showAlert("Error","Selecciona un evento", Alert.AlertType.ERROR);
+        }
     }
 
     public void updateEventButtonClicked(){
         EventClass selectedEvent = eventsTable.getSelectionModel().getSelectedItem();
-
         if(selectedEvent != null) {
             eventId = selectedEvent.get_id();
             cambiarScene("/com/admin/canarysoundsphereadmin/updateEvent-view.fxml", "Actualizar evento", eventsTitle);
 
         } else {
-            System.out.println("Por favor, selecciona un evento para eliminar.");
+            showAlert("Error","Selecciona un evento", Alert.AlertType.ERROR);
         }
     }
 
     public void deleteEventButtonClicked(){
         EventClass selectedEvent = eventsTable.getSelectionModel().getSelectedItem();
-
         if(selectedEvent != null) {
             eventId = selectedEvent.get_id();
             boolean deleted = deleteEventById(eventId, LoginController.token);
@@ -196,10 +205,10 @@ public class TablesController {
                     e.printStackTrace();
                 }
             } else {
-                System.out.println("Error al eliminar el evento.");
+                showAlert("Error","Error al eliminar el evento", Alert.AlertType.ERROR);
             }
         } else {
-            System.out.println("Por favor, selecciona un evento para eliminar.");
+            showAlert("Error","Selecciona un evento", Alert.AlertType.ERROR);
         }
     }
 }
