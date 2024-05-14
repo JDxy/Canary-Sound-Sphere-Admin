@@ -35,7 +35,7 @@
      -fx-text-fill: white;
 }
 .button_style:hover {
-    -fx-background-color: linear-gradient(to right, rgba(0, 0, 0, 0.9), white,  rgba(0, 0, 0, 0.9));
+    -fx-background-color: #FB8500;
     -fx-text-fill: black;
 }
 .footer_text{

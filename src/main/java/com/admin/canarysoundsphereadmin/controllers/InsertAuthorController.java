@@ -68,12 +68,12 @@ public class InsertAuthorController  implements Initializable {
         if (foundAuthor != null) {
             StringBuilder authorText = new StringBuilder();
             authorText.append("ID: ").append(foundAuthor.get_id()).append("\n");
-            authorText.append("Logo: ").append(foundAuthor.getName()).append("\n");
+            authorText.append("Name: ").append(foundAuthor.getName()).append("\n");
             authorText.append("Image: ").append(foundAuthor.getImage()).append("\n");
-            authorText.append("Name: ").append(foundAuthor.getFoundation_year()).append("\n");
-            authorText.append("Date: ").append(foundAuthor.getMusic_type()).append("\n");
-            authorText.append("Time: ").append(foundAuthor.getDescription()).append("\n");
-            authorText.append("Ticket Store: ").append(foundAuthor.getMusic_list()).append("\n\n");
+            authorText.append("Foundation year: ").append(foundAuthor.getFoundation_year()).append("\n");
+            authorText.append("Music type: ").append(foundAuthor.getMusic_type()).append("\n");
+            authorText.append("Description: ").append(foundAuthor.getDescription()).append("\n");
+            authorText.append("Music List: ").append(foundAuthor.getMusic_list()).append("\n\n");
 
             showAuthor.setText(authorText.toString());
         } else {
@@ -106,12 +106,12 @@ public class InsertAuthorController  implements Initializable {
         StringBuilder authorText = new StringBuilder();
         for (Author author : authors) {
             authorText.append("ID: ").append(author.get_id()).append("\n");
-            authorText.append("Logo: ").append(author.getName()).append("\n");
+            authorText.append("Name: ").append(author.getName()).append("\n");
             authorText.append("Image: ").append(author.getImage()).append("\n");
-            authorText.append("Name: ").append(author.getFoundation_year()).append("\n");
-            authorText.append("Date: ").append(author.getMusic_type()).append("\n");
-            authorText.append("Time: ").append(author.getDescription()).append("\n");
-            authorText.append("Ticket Store: ").append(author.getMusic_list()).append("\n\n");
+            authorText.append("Foundation year: ").append(author.getFoundation_year()).append("\n");
+            authorText.append("Music Type: ").append(author.getMusic_type()).append("\n");
+            authorText.append("Description: ").append(author.getDescription()).append("\n");
+            authorText.append("Music List: ").append(author.getMusic_list()).append("\n\n");
         }
         showAuthor.setText(authorText.toString());
     }

@@ -4,6 +4,7 @@ import com.admin.canarysoundsphereadmin.models.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -11,82 +12,67 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.json.JSONException;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers.cambiarScene;
 import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers.showAlert;
 import static com.admin.canarysoundsphereadmin.models.AuthorManager.deleteAuthorById;
 import static com.admin.canarysoundsphereadmin.models.EventManager.*;
 
-public class TablesController {
+public class TablesController implements Initializable {
     // Events table
     @FXML
     private Label eventsTitle;
-
     @FXML
     private TableView<EventClass> eventsTable;
-
     @FXML
     private TableColumn<EventClass, String> idEventsColumn;
-
     @FXML
     private TableColumn<EventClass, String> logoEventsColumn;
-
     @FXML
     private TableColumn<EventClass, String> imageEventsColumn;
-
     @FXML
     private TableColumn<EventClass, String> nameEventsColumn;
-
     @FXML
     private TableColumn<EventClass, String> dateEventsColumn;
-
     @FXML
     private TableColumn<EventClass, String> timeEventsColumn;
-
     @FXML
     private TableColumn<EventClass, Integer> capacityEventsColumn;
-
     @FXML
     private TableColumn<EventClass, String> descriptionEventsColumn;
-
     @FXML
     private TableColumn<EventClass, String> directionEventsColumn;
-
     @FXML
     private TableColumn<EventClass, String> markerEventsColumn;
-
     @FXML
     private TableColumn<EventClass, String> ticket_storeEventsColumn;
 
     // Authors table
     @FXML
     private TableView<Author> authorsTable;
-
     @FXML
     private TableColumn<Author, String> idAuthorsColumn;
-
     @FXML
     private TableColumn<Author, String> nameAuthorsColumn;
-
     @FXML
     private TableColumn<Author, String> imageAuthorsColumn;
-
     @FXML
     private TableColumn<Author, Integer> foundation_yearAuthorsColumn;
-
     @FXML
     private TableColumn<Author, String> music_typeAuthorsColumn;
-
     @FXML
     private TableColumn<Author, String> descriptionAuthorsColumn;
-
     @FXML
     private TableColumn<Author, String> music_listAuthorsColumn;
-
+    //Variable para guardar el eventid
     public static String eventId;
-
+    //Variable para guardar el authorid
     public static String authorId;
-    @FXML
-    protected void initialize() throws JSONException, IOException {
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
         // Add content event table
         idEventsColumn.setCellValueFactory(new PropertyValueFactory<>("_id"));
         logoEventsColumn.setCellValueFactory(new PropertyValueFactory<>("logo"));
@@ -130,12 +116,7 @@ public class TablesController {
     }
 
     public void insertAuthorButtonClicked(){
-        EventClass selectedEvent = eventsTable.getSelectionModel().getSelectedItem();
-        if(selectedEvent != null) {
-            cambiarScene("/com/admin/canarysoundsphereadmin/insertAuthor-view.fxml", "Insertar evento", eventsTitle);
-        }else {
-            showAlert("Error","Selecciona un autor", Alert.AlertType.ERROR);
-        }
+       cambiarScene("/com/admin/canarysoundsphereadmin/insertAuthor-view.fxml", "Insertar evento", eventsTitle);
     }
 
     public void updateAuthorButtonClicked(){
@@ -150,7 +131,6 @@ public class TablesController {
 
     public void deleteAuthorButtonClicked(){
         Author selectedAuthor = authorsTable.getSelectionModel().getSelectedItem();
-
         if(selectedAuthor != null) {
             authorId = selectedAuthor.get_id();
             boolean deleted = deleteAuthorById(authorId, LoginController.token);
@@ -171,13 +151,7 @@ public class TablesController {
     }
 
     public void insertEventButtonClicked(){
-        EventClass selectedEvent = eventsTable.getSelectionModel().getSelectedItem();
-        if(selectedEvent != null) {
-            cambiarScene("/com/admin/canarysoundsphereadmin/insertEvent-view.fxml", "Insertar evento", eventsTitle);
-
-        }else {
-            showAlert("Error","Selecciona un evento", Alert.AlertType.ERROR);
-        }
+        cambiarScene("/com/admin/canarysoundsphereadmin/insertEvent-view.fxml", "Insertar evento", eventsTitle);
     }
 
     public void updateEventButtonClicked(){
@@ -185,7 +159,6 @@ public class TablesController {
         if(selectedEvent != null) {
             eventId = selectedEvent.get_id();
             cambiarScene("/com/admin/canarysoundsphereadmin/updateEvent-view.fxml", "Actualizar evento", eventsTitle);
-
         } else {
             showAlert("Error","Selecciona un evento", Alert.AlertType.ERROR);
         }

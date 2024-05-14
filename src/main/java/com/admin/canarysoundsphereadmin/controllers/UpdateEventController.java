@@ -5,16 +5,19 @@ import com.admin.canarysoundsphereadmin.models.EventManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import java.net.URL;
+import java.util.ResourceBundle;
 import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers.cambiarScene;
 import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers.showAlert;
 import static com.admin.canarysoundsphereadmin.controllers.TablesController.eventId;
 import static com.admin.canarysoundsphereadmin.models.EventManager.updateEventFieldById;
 
-public class UpdateEventController {
+public class UpdateEventController implements Initializable {
     @FXML
     public TextArea newValueTextArea;
     @FXML
@@ -24,12 +27,15 @@ public class UpdateEventController {
     @FXML
     private ComboBox fieldsComboBox;
 
-    public void initialize(){
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
         ObservableList<String> fields = FXCollections.observableArrayList(
                 "Logo", "Image", "Name", "Date", "Time", "Capacity"
-                , "Decription", "Direction", "Marker", "Ticket_store"
+                , "Description", "Direction", "Marker", "Ticket_store"
         );
-        fieldsComboBox.setItems(fields);    }
+        fieldsComboBox.setItems(fields);
+    }
+
     public void exitButtonClicked(){
         cambiarScene("/com/admin/canarysoundsphereadmin/tables-view.fxml", "Tablas", title);
     }

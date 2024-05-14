@@ -6,15 +6,13 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.util.Optional;
 
 public class MethodsForControllers {
     /**
      * cambiarScene
-     * Cambia la escena actual por una nueva según la ruta proporcionada.
-     *
+     * Cambia la escena actual por una nueva según la ruta proporcionada.     *
      * @param ruta        La ruta de la nueva escena.
      * @param title       El título de la nueva ventana.
      * @param labeltitle  La etiqueta del título de la escena actual.
@@ -33,8 +31,7 @@ public class MethodsForControllers {
     }
     /**
      * showAlert
-     * Muestra una alerta con el título, mensaje y tipo de alerta especificados.
-     *
+     * Muestra una alerta con el título, mensaje y tipo de alerta especificados.     *
      * @param title       El título de la alerta.
      * @param message     El mensaje a mostrar.
      * @param alertType   El tipo de alerta (ERROR, INFORMATION, CONFIRMATION, etc.).

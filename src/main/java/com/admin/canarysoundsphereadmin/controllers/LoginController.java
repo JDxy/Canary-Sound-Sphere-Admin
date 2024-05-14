@@ -8,8 +8,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import org.json.JSONException;
 import java.io.IOException;
-import java.util.Objects;
-
 import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers.cambiarScene;
 import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers.showAlert;
 import static com.admin.canarysoundsphereadmin.models.LoginManager.signin;
@@ -21,8 +19,8 @@ public class LoginController {
     public TextField nameTextField;
     @FXML
     public PasswordField passwordTextField;
+    //Variable para guardar el token
     public static String token;
-
 
     public void sendButton() throws IOException, JSONException {
         User user = new User(nameTextField.getText(), passwordTextField.getText());
