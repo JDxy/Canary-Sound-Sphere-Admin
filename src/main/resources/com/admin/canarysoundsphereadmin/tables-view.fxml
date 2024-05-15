@@ -9,47 +9,38 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 
-<TabPane prefHeight="768.0" prefWidth="1024.0" styleClass="tableBg" stylesheets="@../../../assets/style/tables.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.canarysoundsphereadmin.controllers.TablesController">
+<TabPane prefHeight="800.0" prefWidth="1100.0" styleClass="tableBg" stylesheets="@../../../assets/style/tables.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.canarysoundsphereadmin.controllers.TablesController">
    <tabs>
       <Tab text="Eventos">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="275.0" prefWidth="477.0" styleClass="tableBg">
                <children>
-                  <ImageView fitHeight="690.0" fitWidth="1173.0" layoutX="-149.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="839.0" fitWidth="1358.0" layoutX="-258.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../assets/images/music.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="563.0" fitWidth="372.0" layoutX="11.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../assets/icons/pngwing.com.png" />
-                     </image>
-                  </ImageView>
-                  <TableView fx:id="eventsTable" layoutX="12.0" layoutY="15.0" opacity="0.8" prefHeight="630.0" prefWidth="1000.0">
+                  <TableView fx:id="eventsTable" layoutX="10.0" layoutY="14.0" opacity="0.8" prefHeight="670.0" prefWidth="1080.0">
                      <columns>
-                        <TableColumn fx:id="idEventsColumn" minWidth="85.0" prefWidth="85.0" styleClass="tableColumn" text="Id" />
-                        <TableColumn fx:id="logoEventsColumn" minWidth="85.0" prefWidth="85.0" styleClass="tableColumn" text="Logo" />
-                        <TableColumn fx:id="imageEventsColumn" minWidth="85.0" prefWidth="85.0" styleClass="tableColumn" text="Imagen" />
-                        <TableColumn fx:id="nameEventsColumn" minWidth="85.0" prefWidth="85.0" styleClass="tableColumn" text="Nombre" />
-                        <TableColumn fx:id="dateEventsColumn" minWidth="72.0" prefWidth="72.0" styleClass="tableColumn" text="Fecha" />
-                        <TableColumn fx:id="timeEventsColumn" minWidth="72.0" prefWidth="75.0" styleClass="tableColumn" text="Hora" />
-                        <TableColumn fx:id="capacityEventsColumn" minWidth="85.0" prefWidth="96.0" styleClass="tableColumn" text="Capacidad" />
-                        <TableColumn fx:id="descriptionEventsColumn" minWidth="85.0" prefWidth="104.0" styleClass="tableColumn" text="Descripcion" />
-                        <TableColumn fx:id="directionEventsColumn" minWidth="85.0" prefWidth="85.0" styleClass="tableColumn" text="Direccion" />
-                        <TableColumn fx:id="markerEventsColumn" minWidth="85.0" prefWidth="88.0" styleClass="tableColumn" text="Marcador" />
-                        <TableColumn fx:id="ticket_storeEventsColumn" minWidth="85.0" prefWidth="139.0" styleClass="tableColumn" text="Tienda de tickets" />
+                        <TableColumn fx:id="idEventsColumn" minWidth="94.0" prefWidth="94.0" styleClass="tableColumn" text="Id" />
+                        <TableColumn fx:id="logoEventsColumn" minWidth="94.0" prefWidth="94.0" styleClass="tableColumn" text="Logo" />
+                        <TableColumn fx:id="imageEventsColumn" minWidth="94.0" prefWidth="94.0" styleClass="tableColumn" text="Imagen" />
+                        <TableColumn fx:id="nameEventsColumn" minWidth="94.0" prefWidth="94.0" styleClass="tableColumn" text="Nombre" />
+                        <TableColumn fx:id="dateEventsColumn" minWidth="94.0" prefWidth="94.0" styleClass="tableColumn" text="Fecha" />
+                        <TableColumn fx:id="timeEventsColumn" minWidth="94.0" prefWidth="94.0" styleClass="tableColumn" text="Hora" />
+                        <TableColumn fx:id="capacityEventsColumn" minWidth="94.0" prefWidth="94.0" styleClass="tableColumn" text="Capacidad" />
+                        <TableColumn fx:id="descriptionEventsColumn" minWidth="94.0" prefWidth="94.0" styleClass="tableColumn" text="Descripcion" />
+                        <TableColumn fx:id="directionEventsColumn" minWidth="94.0" prefWidth="94.0" styleClass="tableColumn" text="Direccion" />
+                        <TableColumn fx:id="markerEventsColumn" minWidth="94.0" prefWidth="94.0" styleClass="tableColumn" text="Marcador" />
+                        <TableColumn fx:id="ticket_storeEventsColumn" minWidth="94.0" prefWidth="138.0" styleClass="tableColumn" text="Tienda de tickets" />
                      </columns>
                   </TableView>
-                  <HBox alignment="CENTER_RIGHT" layoutX="12.0" layoutY="660.0" prefHeight="70.0" prefWidth="1000.0" spacing="40.0">
-                     <children>
-                        <Label fx:id="eventsTitle" text="Label" textFill="WHITE" visible="false" />
-                        <Button mnemonicParsing="false" onMouseClicked="#insertEventButtonClicked" styleClass="button_class" text="Insertar" />
-                        <Button mnemonicParsing="false" onMouseClicked="#updateEventButtonClicked" styleClass="button_class" text="Actualizar" />
-                        <Button mnemonicParsing="false" onMouseClicked="#deleteEventButtonClicked" styleClass="button_class" text="Eliminar" />
-                     </children>
-                  </HBox>
+                  <Button layoutX="90.0" layoutY="705.0" mnemonicParsing="false" onMouseClicked="#close_session" styleClass="button_class" text="Cerrar Sesión" />
+                  <Button layoutX="360.0" layoutY="705.0" mnemonicParsing="false" onMouseClicked="#insertEventButtonClicked" styleClass="button_class" text="Insertar" />
+                  <Button layoutX="640.0" layoutY="705.0" mnemonicParsing="false" onMouseClicked="#updateEventButtonClicked" styleClass="button_class" text="Actualizar" />
+                  <Button layoutX="920.0" layoutY="705.0" mnemonicParsing="false" onMouseClicked="#deleteEventButtonClicked" styleClass="button_class" text="Eliminar" />
+                  <Label fx:id="eventsTitle" layoutX="10.0" layoutY="714.0" />
                </children>
             </AnchorPane>
          </content>
@@ -58,35 +49,27 @@
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="tableBg">
                <children>
-                  <ImageView fitHeight="690.0" fitWidth="1173.0" layoutX="-149.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="839.0" fitWidth="1358.0" layoutX="-258.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../assets/images/music.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="563.0" fitWidth="372.0" layoutX="11.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../assets/icons/pngwing.com.png" />
-                     </image>
-                  </ImageView>
-                  <TableView fx:id="authorsTable" layoutX="11.0" layoutY="15.0" opacity="0.8" prefHeight="630.0" prefWidth="1000.0">
+                  <TableView fx:id="authorsTable" layoutX="10.0" layoutY="14.0" opacity="0.8" prefHeight="670.0" prefWidth="1080.0">
                      <columns>
-                        <TableColumn fx:id="idAuthorsColumn" minWidth="100.0" prefWidth="100.0" styleClass="tableColumn" text="Id" />
-                        <TableColumn fx:id="nameAuthorsColumn" minWidth="140.0" prefWidth="145.0" styleClass="tableColumn" text="Nombre" />
-                        <TableColumn fx:id="imageAuthorsColumn" minWidth="125.0" prefWidth="125.0" styleClass="tableColumn" text="Imagen" />
-                        <TableColumn fx:id="foundation_yearAuthorsColumn" minWidth="140.0" prefWidth="165.0" styleClass="tableColumn" text="Año de fundacion" />
-                        <TableColumn fx:id="music_typeAuthorsColumn" minWidth="140.0" prefWidth="145.0" styleClass="tableColumn" text="Tipo de musica" />
-                        <TableColumn fx:id="descriptionAuthorsColumn" minWidth="119.0" prefWidth="153.0" styleClass="tableColumn" text="Descripcion" />
-                        <TableColumn fx:id="music_listAuthorsColumn" minWidth="140.0" prefWidth="171.0" styleClass="tableColumn" text="Lista de canciones" />
+                        <TableColumn fx:id="idAuthorsColumn" minWidth="150.0" prefWidth="100.0" styleClass="tableColumn" text="Id" />
+                        <TableColumn fx:id="nameAuthorsColumn" minWidth="150.0" prefWidth="145.0" styleClass="tableColumn" text="Nombre" />
+                        <TableColumn fx:id="imageAuthorsColumn" minWidth="150.0" prefWidth="125.0" styleClass="tableColumn" text="Imagen" />
+                        <TableColumn fx:id="foundation_yearAuthorsColumn" minWidth="150.0" prefWidth="165.0" styleClass="tableColumn" text="Año de fundacion" />
+                        <TableColumn fx:id="music_typeAuthorsColumn" minWidth="150.0" prefWidth="145.0" styleClass="tableColumn" text="Tipo de musica" />
+                        <TableColumn fx:id="descriptionAuthorsColumn" minWidth="150.0" prefWidth="153.0" styleClass="tableColumn" text="Descripcion" />
+                        <TableColumn fx:id="music_listAuthorsColumn" minWidth="148.0" prefWidth="160.0" styleClass="tableColumn" text="Lista de canciones" />
                      </columns>
                   </TableView>
-                  <HBox alignment="CENTER_RIGHT" layoutX="12.0" layoutY="660.0" prefHeight="70.0" prefWidth="1000.0" spacing="40.0">
-                     <children>
-                        <Label fx:id="authorTitle" text="Label" textFill="WHITE" visible="false" />
-                        <Button mnemonicParsing="false" onMouseClicked="#insertAuthorButtonClicked" styleClass="button_class" text="Insertar" />
-                        <Button mnemonicParsing="false" onMouseClicked="#updateAuthorButtonClicked" styleClass="button_class" text="Actualizar" />
-                        <Button mnemonicParsing="false" onMouseClicked="#deleteAuthorButtonClicked" styleClass="button_class" text="Eliminar" />
-                     </children>
-                  </HBox>
+                  <Button layoutX="90.0" layoutY="705.0" mnemonicParsing="false" onMouseClicked="#close_session" styleClass="button_class" text="Cerrar Sesión" />
+                  <Button layoutX="360.0" layoutY="705.0" mnemonicParsing="false" onMouseClicked="#insertAuthorButtonClicked" styleClass="button_class" text="Insertar" />
+                  <Button layoutX="640.0" layoutY="705.0" mnemonicParsing="false" onMouseClicked="#updateAuthorButtonClicked" styleClass="button_class" text="Actualizar" />
+                  <Button layoutX="920.0" layoutY="705.0" mnemonicParsing="false" onMouseClicked="#deleteAuthorButtonClicked" styleClass="button_class" text="Eliminar" />
+                  <Label fx:id="authorTitle" layoutX="14.0" layoutY="714.0" prefHeight="20.0" prefWidth="0.0" />
                </children></AnchorPane>
          </content>
       </Tab>

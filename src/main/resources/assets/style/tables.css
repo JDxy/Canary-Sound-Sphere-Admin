@@ -9,7 +9,7 @@
   -fx-font-family: "Roboto Medium";
 }
 .tableBg {
-    -fx-background-color: white;
+    -fx-background-color: #8ECAE6;
 }
 .tab {
     -fx-background-color: white;
@@ -18,24 +18,26 @@
     -fx-text-fill: black;
 }
 .tab:selected .tab-label {
-    -fx-text-fill: white;
+    -fx-text-fill: #FB8500;
 }
 .tab:selected {
     -fx-background-color: black;
 }
 .tableColumn {
-     -fx-background-color:#219EBC;
+     -fx-background-color: #8ECAE6;
      -fx-border-color: black;
      -fx-border-width: 1;
 }
+.table-row-cell:selected .table-cell {
+    -fx-background-color: rgba(255,255,255,0.8);
+    -fx-text-fill: black;
+}
 .button_class {
     -fx-font-size: 18px;
-    -fx-border-radius: 5px;
-    -fx-border-width: 2px;
-    -fx-border-color: grey;
-    -fx-background-radius: 5px;
-    -fx-background-color: rgba(0, 0, 0, 0.9);
-    -fx-text-fill: white;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-background-color: rgba(255,255,255,0.8);
+    -fx-text-fill: black;
 }
 .button_class:hover {
     -fx-background-color: #FB8500;

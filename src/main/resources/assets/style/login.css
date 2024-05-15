@@ -6,14 +6,15 @@
     font-family: 'Roboto Medium';
     src: url('../fonts/Roboto-Medium.ttf');
 }
+
 .root {
-  -fx-font-size: 16px;
+  -fx-font-size: 20px;
   -fx-font-weight: 600;
   -fx-text-fill: white;
   -fx-font-family: "Roboto Medium";
 }
 #main_panel {
-    -fx-background-color: #8ECAE6;
+    -fx-background-color:#219EBC;
 }
 .login_title, .login_title2{
     -fx-font-family: "Pacifico";
@@ -25,17 +26,24 @@
 .login_title2{
      -fx-text-fill: #F72585;
 }
-.input_Style, .button_style{
+.input_Style {
+         -fx-border-width: 0 0 2px 0;
+         -fx-border-color: rgba(0, 0, 0, 0.9);
+         -fx-background-color: transparent;
+         -fx-text-fill: rgba(255, 255, 255, 0.8);
+         -fx-prompt-text-fill: rgba(255, 255, 255, 0.6);
+         -fx-alignment: center;
+}
+.button_style{
      -fx-font-size: 18px;
-     -fx-border-radius: 5px;
-     -fx-border-width: 2px;
-     -fx-border-color: grey;
-     -fx-background-radius: 5px;
+     -fx-border-width: 0;
+     -fx-border-radius: 0px;
+     -fx-background-radius: 20px;
      -fx-background-color: rgba(0, 0, 0, 0.9);
-     -fx-text-fill: white;
+     -fx-text-fill: #FB8500;
 }
 .button_style:hover {
-    -fx-background-color: #FB8500;
+    -fx-background-color: rgba(251, 133, 0, 1);
     -fx-text-fill: black;
 }
 .footer_text{

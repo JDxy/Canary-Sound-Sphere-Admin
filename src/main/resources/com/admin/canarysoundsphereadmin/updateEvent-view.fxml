@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="main_panel" prefHeight="768.0" prefWidth="1024.0" stylesheets="@../../../assets/style/update.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.canarysoundsphereadmin.controllers.UpdateEventController">
+<AnchorPane id="main_panel" prefHeight="800.0" prefWidth="1100.0" stylesheets="@../../../assets/style/update.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.canarysoundsphereadmin.controllers.UpdateEventController">
    <children>
-      <Pane layoutX="39.0" layoutY="41.0" prefHeight="686.0" prefWidth="946.0" styleClass="paneContent">
+      <Pane prefHeight="800.0" prefWidth="1100.0" styleClass="paneContent">
          <children>
-            <TextArea fx:id="showEventUpdated" editable="false" layoutX="14.0" layoutY="359.0" prefHeight="250.0" prefWidth="486.0" styleClass="textarea_style" />
-            <ComboBox fx:id="fieldsComboBox" layoutX="14.0" layoutY="281.0" prefHeight="40.0" prefWidth="385.0" promptText="Seleccione el campo a actualizar" styleClass="comb_style" />
-            <Button layoutX="400.0" layoutY="281.0" mnemonicParsing="false" onMouseClicked="#sendButtonClicked" prefHeight="40.0" prefWidth="100.0" styleClass="button_style" text="Enviar" />
-            <Button layoutX="14.0" layoutY="616.0" mnemonicParsing="false" onMouseClicked="#exitButtonClicked" prefHeight="40.0" prefWidth="100.0" styleClass="button_style" text="Salir" />
-            <TextArea fx:id="newValueTextArea" layoutX="14.0" layoutY="30.0" prefHeight="250.0" prefWidth="486.0" styleClass="textarea_style" />
-            <Label layoutX="14.0" layoutY="336.0" styleClass="label_style" text="Eventos Actualizados:" />
-            <Label layoutX="14.0" layoutY="7.0" styleClass="label_style" text="Datos Modificados:" />
-            <Pane layoutX="511.0" layoutY="30.0" prefHeight="418.0" prefWidth="414.0" styleClass="image_pane">
+            <TextArea fx:id="showEventUpdated" editable="false" layoutX="527.0" layoutY="498.0" prefHeight="259.0" prefWidth="516.0" styleClass="textarea_style" />
+            <ComboBox fx:id="fieldsComboBox" layoutX="527.0" layoutY="418.0" prefHeight="40.0" prefWidth="299.0" promptText="Seleccione el campo a actualizar" styleClass="comb_style" />
+            <Button layoutX="833.0" layoutY="418.0" mnemonicParsing="false" onMouseClicked="#sendButtonClicked" prefHeight="40.0" prefWidth="100.0" styleClass="button_style" text="Enviar" />
+            <Button layoutX="943.0" layoutY="418.0" mnemonicParsing="false" onMouseClicked="#exitButtonClicked" prefHeight="40.0" prefWidth="100.0" styleClass="button_style" text="Salir" />
+            <TextArea fx:id="newValueTextArea" layoutX="527.0" layoutY="63.0" prefHeight="336.0" prefWidth="516.0" styleClass="textarea_style" />
+            <Label layoutX="527.0" layoutY="475.0" styleClass="label_style" text="Eventos Actualizados:" />
+            <Label layoutX="527.0" layoutY="40.0" styleClass="label_style" text="Datos Modificados:" />
+            <Pane layoutX="30.0" layoutY="52.0" prefHeight="472.0" prefWidth="469.0" styleClass="image_pane">
                <children>
-                  <ImageView fitHeight="414.0" fitWidth="400.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="521.0" fitWidth="455.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../assets/images/colourManImage.png" />
                      </image>
@@ -28,7 +33,7 @@
                         <Image url="@../../../assets/icons/tratamiento.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="title" layoutX="5.0" layoutY="303.0" opacity="0.9" styleClass="title" stylesheets="@../../../assets/style/update.css" text="EVENTOS">
+                  <Label fx:id="title" layoutX="35.0" layoutY="327.0" opacity="0.9" styleClass="title" stylesheets="@../../../assets/style/update.css" text="EVENTOS">
                      <font>
                         <Font size="25.0" />
                      </font>

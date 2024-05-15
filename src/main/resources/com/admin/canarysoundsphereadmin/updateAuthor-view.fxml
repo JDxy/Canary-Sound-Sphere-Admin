@@ -10,14 +10,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="main_panel" prefHeight="768.0" prefWidth="1024.0" stylesheets="@../../../assets/style/update.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.canarysoundsphereadmin.controllers.UpdateAuthorController">
+<AnchorPane id="main_panel" prefHeight="800.0" prefWidth="1100.0" stylesheets="@../../../assets/style/update.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.canarysoundsphereadmin.controllers.UpdateAuthorController">
    <children>
-      <Pane layoutX="39.0" layoutY="41.0" prefHeight="686.0" prefWidth="946.0" styleClass="paneContent">
+      <Pane prefHeight="800.0" prefWidth="1100.0" styleClass="paneContent">
          <children>
-            <Button layoutX="14.0" layoutY="632.0" mnemonicParsing="false" onMouseClicked="#exitButtonClicked" prefHeight="40.0" prefWidth="100.0" styleClass="button_style" text="Salir" />
-            <Button layoutX="388.0" layoutY="291.0" mnemonicParsing="false" onMouseClicked="#sendButtonClicked" prefHeight="40.0" prefWidth="100.0" styleClass="button_style" text="Enviar" />
-            <ComboBox fx:id="fieldsComboBox" layoutX="14.0" layoutY="291.0" prefHeight="40.0" prefWidth="373.0" styleClass="comb_style" />
-            <Pane layoutX="504.0" layoutY="54.0" prefHeight="430.0" prefWidth="428.0" styleClass="image_pane">
+            <Button layoutX="392.0" layoutY="615.0" mnemonicParsing="false" onMouseClicked="#exitButtonClicked" prefHeight="40.0" prefWidth="100.0" styleClass="button_style" text="Salir" />
+            <Button layoutX="392.0" layoutY="565.0" mnemonicParsing="false" onMouseClicked="#sendButtonClicked" prefHeight="40.0" prefWidth="100.0" styleClass="button_style" text="Enviar" />
+            <ComboBox fx:id="fieldsComboBox" layoutX="64.0" layoutY="565.0" prefHeight="40.0" prefWidth="325.0" promptText="Seleccione el campo a actualizar" styleClass="comb_style" />
+            <Pane layoutX="64.0" layoutY="89.0" prefHeight="430.0" prefWidth="428.0" styleClass="image_pane">
                <children>
                   <ImageView fitHeight="416.0" fitWidth="422.0" layoutX="6.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -36,10 +36,10 @@
                   </Label>
                </children>
             </Pane>
-            <TextArea fx:id="showAuthorUpdated" editable="false" layoutX="14.0" layoutY="363.0" prefHeight="237.0" prefWidth="474.0" styleClass="textarea_style" />
-            <TextArea fx:id="newValueTextArea" layoutX="14.0" layoutY="53.0" prefHeight="237.0" prefWidth="474.0" styleClass="textarea_style" />
-            <Label layoutX="14.0" layoutY="338.0" styleClass="label_style" text="Eventos Actualizados:" />
-            <Label layoutX="14.0" layoutY="31.0" styleClass="label_style" text="Datos Modificados:" />
+            <TextArea fx:id="showAuthorUpdated" editable="false" layoutX="550.0" layoutY="435.0" prefHeight="300.0" prefWidth="474.0" styleClass="textarea_style" />
+            <TextArea fx:id="newValueTextArea" layoutX="550.0" layoutY="89.0" prefHeight="300.0" prefWidth="474.0" styleClass="textarea_style" />
+            <Label layoutX="550.0" layoutY="412.0" styleClass="label_style" text="Eventos Actualizados:" />
+            <Label layoutX="550.0" layoutY="66.0" styleClass="label_style" text="Datos Modificados:" />
          </children>
       </Pane>
    </children>

@@ -10,37 +10,37 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="main_panel" prefHeight="768.0" prefWidth="1024.0" stylesheets="@../../../assets/style/Inserts.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.canarysoundsphereadmin.controllers.InsertAuthorController">
+<AnchorPane id="main_panel" prefHeight="800.0" prefWidth="1100.0" stylesheets="@../../../assets/style/Inserts.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.canarysoundsphereadmin.controllers.InsertAuthorController">
    <children>
-      <Pane layoutX="50.0" layoutY="58.0" prefHeight="653.0" prefWidth="925.0" styleClass="paneContent">
+      <Pane prefHeight="800.0" prefWidth="1100.0" styleClass="paneContent">
          <children>
-            <ImageView fitHeight="226.0" fitWidth="213.0" layoutX="593.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="226.0" fitWidth="213.0" layoutX="764.0" layoutY="583.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../assets/icons/dance.png" />
                </image>
             </ImageView>
-            <TextField fx:id="nameTextField" layoutX="33.0" layoutY="14.0" prefHeight="40.0" prefWidth="400.0" promptText="Nombre" styleClass="input_Style" />
-            <TextField fx:id="imageTextField" layoutX="33.0" layoutY="62.0" prefHeight="40.0" prefWidth="400.0" promptText="Imagen" styleClass="input_Style" />
-            <TextField fx:id="foundationYearTextField" layoutX="33.0" layoutY="111.0" prefHeight="40.0" prefWidth="400.0" promptText="Año de fundación" styleClass="input_Style" />
-            <TextField fx:id="musicTypeTextField" layoutX="495.0" layoutY="14.0" prefHeight="40.0" prefWidth="400.0" promptText="Género musical" styleClass="input_Style" />
-            <TextField fx:id="descriptionTextField" layoutX="33.0" layoutY="162.0" prefHeight="120.0" prefWidth="400.0" promptText="Descripción" styleClass="input_Style" />
-            <TextField fx:id="songsListsTextFields" layoutX="495.0" layoutY="62.0" prefHeight="40.0" prefWidth="400.0" promptText="Listas" styleClass="input_Style" />
-            <ImageView fitHeight="302.0" fitWidth="585.0" layoutX="2.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
+            <TextField fx:id="nameTextField" layoutX="666.0" layoutY="52.0" prefHeight="40.0" prefWidth="400.0" promptText="Nombre" styleClass="input_Style" />
+            <TextField fx:id="imageTextField" layoutX="666.0" layoutY="112.0" prefHeight="40.0" prefWidth="400.0" promptText="Imagen" styleClass="input_Style" />
+            <TextField fx:id="foundationYearTextField" layoutX="666.0" layoutY="172.0" prefHeight="40.0" prefWidth="400.0" promptText="Año de fundación" styleClass="input_Style" />
+            <TextField fx:id="musicTypeTextField" layoutX="666.0" layoutY="232.0" prefHeight="40.0" prefWidth="400.0" promptText="Género musical" styleClass="input_Style" />
+            <TextField fx:id="descriptionTextField" layoutX="666.0" layoutY="292.0" prefHeight="40.0" prefWidth="400.0" promptText="Descripción" styleClass="input_Style" />
+            <TextField fx:id="songsListsTextFields" layoutX="666.0" layoutY="352.0" prefHeight="40.0" prefWidth="400.0" promptText="Listas" styleClass="input_Style" />
+            <ImageView fitHeight="302.0" fitWidth="585.0" layoutX="35.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../assets/images/to_dance.jpg" />
                </image>
             </ImageView>
-            <TextArea fx:id="showAuthor" editable="false" layoutX="582.0" layoutY="350.0" prefHeight="302.0" prefWidth="343.0" styleClass="textarea_style" />
-            <Label fx:id="title" layoutX="85.0" layoutY="438.0" opacity="0.8" styleClass="title" text="AUTORES">
+            <TextArea fx:id="showAuthor" editable="false" layoutX="35.0" layoutY="449.0" opacity="0.8" prefHeight="300.0" prefWidth="585.0" styleClass="textarea_style" />
+            <Label fx:id="title" layoutX="118.0" layoutY="130.0" opacity="0.8" styleClass="title" text="AUTORES">
                <font>
                   <Font size="28.0" />
                </font>
             </Label>
-            <TextField fx:id="search_by_id" layoutX="495.0" layoutY="295.0" prefHeight="40.0" prefWidth="281.0" promptText="Buscar por id" styleClass="input_Style" />
-            <Button layoutX="785.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#search_by_id_button" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Buscar" />
-            <Button layoutX="178.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#sendButtonClicked" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Enviar" />
-            <Button layoutX="323.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#clean_button" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Limpiar" />
-            <Button layoutX="33.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#exitButtonClicked" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Salir" />
+            <TextField fx:id="search_by_id" layoutX="35.0" layoutY="368.0" prefHeight="40.0" prefWidth="439.0" promptText="Buscar por id" styleClass="input_Style" />
+            <Button layoutX="504.0" layoutY="368.0" mnemonicParsing="false" onMouseClicked="#search_by_id_button" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Buscar" />
+            <Button layoutX="666.0" layoutY="449.0" mnemonicParsing="false" onMouseClicked="#sendButtonClicked" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Enviar" />
+            <Button layoutX="811.0" layoutY="449.0" mnemonicParsing="false" onMouseClicked="#clean_button" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Limpiar" />
+            <Button layoutX="956.0" layoutY="449.0" mnemonicParsing="false" onMouseClicked="#exitButtonClicked" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Salir" />
          </children>
       </Pane>
    </children>

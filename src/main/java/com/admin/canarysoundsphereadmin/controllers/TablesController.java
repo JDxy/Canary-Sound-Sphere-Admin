@@ -10,8 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import org.json.JSONException;
-import java.io.IOException;
+import javafx.scene.input.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -183,5 +182,8 @@ public class TablesController implements Initializable {
         } else {
             showAlert("Error","Selecciona un evento", Alert.AlertType.ERROR);
         }
+    }
+    public void close_session(MouseEvent mouseEvent) {
+        cambiarScene("/com/admin/canarysoundsphereadmin/login-view.fxml", "Login", eventsTitle);
     }
 }
