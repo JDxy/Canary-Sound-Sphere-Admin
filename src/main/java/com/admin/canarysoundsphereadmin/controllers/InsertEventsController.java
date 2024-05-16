@@ -4,6 +4,7 @@ import com.admin.canarysoundsphereadmin.models.EventClass;
 import com.admin.canarysoundsphereadmin.models.EventManager;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
@@ -13,6 +14,7 @@ import javafx.collections.ObservableList;
 import java.net.URL;
 import java.util.ResourceBundle;
 import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers.cambiarScene;
+import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers.showAlert;
 import static com.admin.canarysoundsphereadmin.models.EventManager.*;
 
 public class InsertEventsController implements Initializable {
@@ -52,23 +54,69 @@ public class InsertEventsController implements Initializable {
         cambiarScene("/com/admin/canarysoundsphereadmin/tables-view.fxml", "Tablas", title);
     }
 
-    public void sendButtonClicked(){
+    public void sendButtonClicked() {
         String name = nameTextField.getText();
         String logo = logoTextField.getText();
         String image = imageTextField.getText();
         String date = dateTextField.getText();
         String hour = hourTextField.getText();
-        int capacity = Integer.parseInt(capacityTextField.getText());
+        String capacitySTR = capacityTextField.getText();
         String description = descriptionTextField.getText();
         String direction = directionTextField.getText();
         String marker = markerTextField.getText();
         String ticketStore = ticketsStoreTextFields.getText();
+        Integer capacity;
+
+        // Verificar campos vacíos
+        if (name.isEmpty()) {
+            showAlert("Error", "El campo Nombre no puede estar vacío", Alert.AlertType.ERROR);
+            return;
+        }
+        if (logo.isEmpty()) {
+            showAlert("Error", "El campo Logo no puede estar vacío", Alert.AlertType.ERROR);
+            return;
+        }
+        if (image.isEmpty()) {
+            showAlert("Error", "El campo Imagen no puede estar vacío", Alert.AlertType.ERROR);
+            return;
+        }
+        if (date.isEmpty()) {
+            showAlert("Error", "El campo Fecha no puede estar vacío", Alert.AlertType.ERROR);
+            return;
+        }
+        if (hour.isEmpty()) {
+            showAlert("Error", "El campo Hora no puede estar vacío", Alert.AlertType.ERROR);
+            return;
+        }
+        try {
+            capacity = Integer.parseInt(capacitySTR);
+        } catch (NumberFormatException e) {
+            showAlert("Error", "El campo Capacidad debe ser un número entero", Alert.AlertType.ERROR);
+            return;
+        }
+        if (description.isEmpty()) {
+            showAlert("Error", "El campo Descripción no puede estar vacío", Alert.AlertType.ERROR);
+            return;
+        }
+        if (direction.isEmpty()) {
+            showAlert("Error", "El campo Dirección no puede estar vacío", Alert.AlertType.ERROR);
+            return;
+        }
+        if (marker.isEmpty()) {
+            showAlert("Error", "El campo Marcador no puede estar vacío", Alert.AlertType.ERROR);
+            return;
+        }
+        if (ticketStore.isEmpty()) {
+            showAlert("Error", "El campo Tienda de boletos no puede estar vacío", Alert.AlertType.ERROR);
+            return;
+        }
 
         EventClass newEvent = new EventClass(idEventPlusOne(), logo, image, name, date, hour, capacity, description, direction, marker, ticketStore);
-        insertEvent(newEvent,LoginController.token);
-        
+        insertEvent(newEvent, LoginController.token);
+
         clean();
     }
+
 
     public void search_by_id_button(MouseEvent mouseEvent) {
         String eventId = search_by_id.getText();

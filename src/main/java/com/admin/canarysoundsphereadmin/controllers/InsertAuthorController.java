@@ -5,6 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -15,6 +16,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers.cambiarScene;
+import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers.showAlert;
 import static com.admin.canarysoundsphereadmin.models.AuthorManager.idAuthorPlusOne;
 import static com.admin.canarysoundsphereadmin.models.AuthorManager.insertAuthor;
 
@@ -50,10 +52,38 @@ public class InsertAuthorController  implements Initializable {
     public void sendButtonClicked() throws JSONException, IOException {
         String name = nameTextField.getText();
         String image = imageTextField.getText();
-        int foundationYear = Integer.parseInt(foundationYearTextField.getText());
+        String foundationYearStr = foundationYearTextField.getText();
         String musicType = musicTypeTextField.getText();
         String description = descriptionTextField.getText();
         String songsList = songsListsTextFields.getText();
+        int foundationYear;
+
+        if (name.isEmpty()) {
+            showAlert("Error", "El campo Nombre no puede estar vacío", Alert.AlertType.ERROR);
+            return;
+        }
+        if (image.isEmpty()) {
+            showAlert("Error", "El campo Imagen no puede estar vacío", Alert.AlertType.ERROR);
+            return;
+        }
+        try {
+            foundationYear = Integer.parseInt(foundationYearStr);
+        } catch (NumberFormatException e) {
+            showAlert("Error", "El campo Año de fundacion debe ser un número entero", Alert.AlertType.ERROR);
+            return;
+        }
+        if (musicType.isEmpty()) {
+            showAlert("Error", "El campo Tipo de Música no puede estar vacío", Alert.AlertType.ERROR);
+            return;
+        }
+        if (description.isEmpty()) {
+            showAlert("Error", "El campo Descripción no puede estar vacío", Alert.AlertType.ERROR);
+            return;
+        }
+        if (songsList.isEmpty()) {
+            showAlert("Error", "El campo Listas no puede estar vacío", Alert.AlertType.ERROR);
+            return;
+        }
 
         Author newAuthor = new Author(idAuthorPlusOne(), name, image, foundationYear, musicType, description, songsList);
         insertAuthor(newAuthor, LoginController.token);
