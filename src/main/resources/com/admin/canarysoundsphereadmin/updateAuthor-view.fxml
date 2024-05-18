@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,10 +15,10 @@
    <children>
       <Pane prefHeight="800.0" prefWidth="1100.0" styleClass="paneContent">
          <children>
-            <Button layoutX="392.0" layoutY="615.0" mnemonicParsing="false" onMouseClicked="#exitButtonClicked" prefHeight="40.0" prefWidth="100.0" styleClass="button_style" text="Salir" />
-            <Button layoutX="392.0" layoutY="565.0" mnemonicParsing="false" onMouseClicked="#sendButtonClicked" prefHeight="40.0" prefWidth="100.0" styleClass="button_style" text="Enviar" />
-            <ComboBox fx:id="fieldsComboBox" layoutX="64.0" layoutY="565.0" prefHeight="40.0" prefWidth="325.0" promptText="Seleccione el campo a actualizar" styleClass="comb_style" />
-            <Pane layoutX="64.0" layoutY="89.0" prefHeight="430.0" prefWidth="428.0" styleClass="image_pane">
+            <Button layoutX="395.0" layoutY="592.0" mnemonicParsing="false" onMouseClicked="#exitButtonClicked" prefHeight="40.0" prefWidth="100.0" styleClass="button_style" text="Salir" />
+            <Button layoutX="395.0" layoutY="542.0" mnemonicParsing="false" onMouseClicked="#sendButtonClicked" prefHeight="40.0" prefWidth="100.0" styleClass="button_style" text="Enviar" />
+            <ComboBox fx:id="fieldsComboBox" layoutX="67.0" layoutY="542.0" prefHeight="40.0" prefWidth="325.0" promptText="Seleccione el campo a actualizar" styleClass="comb_style" />
+            <Pane layoutX="67.0" layoutY="66.0" prefHeight="430.0" prefWidth="428.0" styleClass="image_pane">
                <children>
                   <ImageView fitHeight="416.0" fitWidth="422.0" layoutX="6.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -36,10 +37,16 @@
                   </Label>
                </children>
             </Pane>
-            <TextArea fx:id="showAuthorUpdated" editable="false" layoutX="550.0" layoutY="435.0" prefHeight="300.0" prefWidth="474.0" styleClass="textarea_style" />
-            <TextArea fx:id="newValueTextArea" layoutX="550.0" layoutY="89.0" prefHeight="300.0" prefWidth="474.0" styleClass="textarea_style" />
-            <Label layoutX="550.0" layoutY="412.0" styleClass="label_style" text="Eventos Actualizados:" />
-            <Label layoutX="550.0" layoutY="66.0" styleClass="label_style" text="Datos Modificados:" />
+            <TextArea fx:id="showAuthorUpdated" editable="false" layoutX="559.0" layoutY="435.0" prefHeight="300.0" prefWidth="474.0" styleClass="textarea_style">
+               <effect>
+                  <InnerShadow choke="1.0" height="10.0" radius="4.5" width="10.0" />
+               </effect></TextArea>
+            <TextArea fx:id="newValueTextArea" layoutX="559.0" layoutY="89.0" prefHeight="300.0" prefWidth="474.0" styleClass="textarea_style">
+               <effect>
+                  <InnerShadow choke="1.0" height="10.0" radius="4.5" width="10.0" />
+               </effect></TextArea>
+            <Label layoutX="559.0" layoutY="412.0" styleClass="label_style" text="Eventos Actualizados:" />
+            <Label layoutX="559.0" layoutY="66.0" styleClass="label_style" text="Datos Modificados:" />
          </children>
       </Pane>
    </children>

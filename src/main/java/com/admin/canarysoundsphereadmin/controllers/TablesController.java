@@ -120,7 +120,7 @@ public class TablesController implements Initializable {
      * Cambia a la vista de inserción de autores.
      */
     public void insertAuthorButtonClicked(){
-       cambiarScene("/com/admin/canarysoundsphereadmin/insertAuthor-view.fxml", "Insertar evento", eventsTitle);
+       cambiarScene("/com/admin/canarysoundsphereadmin/insertAuthor-view.fxml", "Insertar autor", eventsTitle);
     }
 
     /**
