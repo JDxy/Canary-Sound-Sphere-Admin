@@ -12,6 +12,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Gestiona las operaciones relacionadas con los Eventos.
+ */
 public class EventManager {
 
     /**

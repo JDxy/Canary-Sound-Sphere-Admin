@@ -9,6 +9,9 @@ import java.net.URL;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+* Gestiona las operaciones necesarias para el inicio de sesion.
+ */
 public class LoginManager {
     /**
      * Método signin

@@ -9,6 +9,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Optional;
 
+/**
+* Clase para metodos que se repiten varias veces en los controladores
+ */
 public class MethodsForControllers {
     /**
      * cambiarScene

@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"com.admin.canarysoundsphereadmin","l":"com.admin.canarysoundsphereadmin"},{"m":"com.admin.canarysoundsphereadmin","l":"com.admin.canarysoundsphereadmin.controllers"},{"m":"com.admin.canarysoundsphereadmin","l":"com.admin.canarysoundsphereadmin.models"}];updateSearchResults();

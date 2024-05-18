@@ -19,6 +19,9 @@ import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers
 import static com.admin.canarysoundsphereadmin.models.AuthorManager.deleteAuthorById;
 import static com.admin.canarysoundsphereadmin.models.EventManager.*;
 
+/**
+ * Controlador para manejar las tablas de eventos y autores.
+ */
 public class TablesController implements Initializable {
     // Events table
     @FXML
