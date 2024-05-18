@@ -23,10 +23,6 @@ public class Author {
         return _id;
     }
 
-    public void set_id(String _id) {
-        this._id = _id;
-    }
-
     public String getName() {
         return name;
     }
@@ -47,10 +43,6 @@ public class Author {
         return foundation_year;
     }
 
-    public void setFoundation_year(int foundation_year) {
-        this.foundation_year = foundation_year;
-    }
-
     public String getMusic_type() {
         return music_type;
     }
@@ -63,15 +55,7 @@ public class Author {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getMusic_list() {
         return music_list;
-    }
-
-    public void setMusic_list(String music_list) {
-        this.music_list = music_list;
     }
 }

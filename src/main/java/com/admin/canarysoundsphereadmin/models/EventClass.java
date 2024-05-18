@@ -31,16 +31,8 @@ public class EventClass {
         return _id;
     }
 
-    public void set_id(String _id) {
-        this._id = _id;
-    }
-
     public String getLogo() {
         return logo;
-    }
-
-    public void setLogo(String logo) {
-        this.logo = logo;
     }
 
     public String getImage() {
@@ -63,55 +55,27 @@ public class EventClass {
         return date;
     }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
-
     public String getTime() {
         return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
     }
 
     public int getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getDirection() {
         return direction;
     }
 
-    public void setDirection(String direction) {
-        this.direction = direction;
-    }
-
     public String getMarker() {
         return marker;
     }
 
-    public void setMarker(String marker) {
-        this.marker = marker;
-    }
-
     public String getTicket_store() {
         return ticket_store;
-    }
-
-    public void setTicket_store(String ticket_store) {
-        this.ticket_store = ticket_store;
     }
 }

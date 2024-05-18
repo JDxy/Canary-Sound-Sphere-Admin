@@ -12,7 +12,18 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Gestiona las operaciones relacionadas con los autores.
+ */
 public class AuthorManager {
+
+    /**
+     * Obtiene todos los autores desde la API.
+     *
+     * @return Una lista de objetos Author que representan los autores obtenidos.
+     * @throws IOException  Si ocurre un error de E/S al conectarse a la API.
+     * @throws JSONException Si ocurre un error al procesar la respuesta JSON de la API.
+     */
     public static List<Author> getAllAuthors() throws IOException, JSONException {
         List<Author> authors = new ArrayList<>();
         String apiUrl = "http://localhost:9006/authors"; // URL del endpoint que devuelve todos los autores
@@ -51,6 +62,13 @@ public class AuthorManager {
         return authors;
     }
 
+    /**
+     * Inserta un nuevo autor en la base de datos.
+     *
+     * @param author    El autor a insertar.
+     * @param authToken El token de autenticación para la API.
+     * @return true si la operación de inserción fue exitosa, false de lo contrario.
+     */
     public static boolean insertAuthor(Author author, String authToken) {
         try {
             JSONObject authorJson = createAuthorJson(author);
@@ -68,6 +86,13 @@ public class AuthorManager {
         }
     }
 
+    /**
+     * Crea un objeto JSON a partir de un autor.
+     *
+     * @param author El autor para el cual se creará el objeto JSON.
+     * @return El objeto JSON creado.
+     * @throws JSONException Si ocurre un error al crear el objeto JSON.
+     */
     private static JSONObject createAuthorJson(Author author) throws JSONException {
         JSONObject authorJson = new JSONObject();
         authorJson.put("_id", author.get_id());
@@ -80,6 +105,13 @@ public class AuthorManager {
         return authorJson;
     }
 
+    /**
+     * Crea una conexión HTTP con la API de autores.
+     *
+     * @param authToken El token de autenticación para la API.
+     * @return La conexión HTTP creada.
+     * @throws IOException Si ocurre un error al crear la conexión.
+     */
     private static HttpURLConnection createConnection(String authToken) throws IOException {
         String apiUrl = "http://localhost:9006/authors";
         URL url = new URL(apiUrl);
@@ -91,6 +123,14 @@ public class AuthorManager {
         return con;
     }
 
+
+    /**
+     * Envía una solicitud HTTP con el objeto JSON dado.
+     *
+     * @param con        La conexión HTTP a través de la cual se enviará la solicitud.
+     * @param authorJson El objeto JSON que se enviará en la solicitud.
+     * @throws IOException Si ocurre un error al enviar la solicitud.
+     */
     private static void sendRequest(HttpURLConnection con, JSONObject authorJson) throws IOException {
         try(OutputStream os = con.getOutputStream()) {
             byte[] input = authorJson.toString().getBytes("utf-8");
@@ -98,6 +138,12 @@ public class AuthorManager {
         }
     }
 
+    /**
+     * Obtiene un autor por su ID desde la base de datos.
+     *
+     * @param authorId El ID del autor que se desea obtener.
+     * @return El autor correspondiente al ID especificado, o null si no se encuentra.
+     */
     public static Author getAuthorById(String authorId) {
         try {
             String apiUrl = "http://localhost:9006/authors/" + authorId;
@@ -136,6 +182,11 @@ public class AuthorManager {
         return null;
     }
 
+    /**
+     * Incrementa el ID del autor en uno y lo devuelve como una cadena de cuatro dígitos.
+     *
+     * @return El ID del autor incrementado en uno como una cadena de cuatro dígitos.
+     */
     public static String idAuthorPlusOne(){
         try {
             List<Author> authors = AuthorManager.getAllAuthors();
@@ -159,6 +210,15 @@ public class AuthorManager {
         return "0001";
     }
 
+    /**
+     * Actualiza un campo específico de un autor en la base de datos.
+     *
+     * @param authorId   El ID del autor cuyo campo se actualizará.
+     * @param fieldName  El nombre del campo que se actualizará.
+     * @param newValue   El nuevo valor para el campo especificado.
+     * @param authToken  El token de autenticación para la API.
+     * @return true si la operación de actualización fue exitosa, false de lo contrario.
+     */
     public static boolean updateAuthorFieldById(String authorId, String fieldName, String newValue, String authToken) {
         try {
             JSONObject updateJson = new JSONObject();
@@ -192,6 +252,13 @@ public class AuthorManager {
         }
     }
 
+    /**
+     * Elimina un autor de la base de datos.
+     *
+     * @param authorId  El ID del autor que se eliminará.
+     * @param authToken El token de autenticación para la API.
+     * @return true si la operación de eliminación fue exitosa, false de lo contrario.
+     */
     public static boolean deleteAuthorById(String authorId, String authToken) {
         try {
             String apiUrl = "http://localhost:9006/authors/" + authorId;

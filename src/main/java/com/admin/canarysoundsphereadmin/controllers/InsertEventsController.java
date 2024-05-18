@@ -17,6 +17,10 @@ import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers
 import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers.showAlert;
 import static com.admin.canarysoundsphereadmin.models.EventManager.*;
 
+/**
+ * Controlador para la inserción de eventos en la aplicación Canary Sound Sphere Admin.
+ * Gestiona la interfaz de usuario y las interacciones para insertar un nuevo evento.
+ */
 public class InsertEventsController implements Initializable {
     @FXML
     public TextArea showEvent;
@@ -45,15 +49,29 @@ public class InsertEventsController implements Initializable {
     @FXML
     private Label title;
 
+    /**
+     * Inicializa el controlador después de cargar el archivo FXML.
+     *
+     * @param url            La ubicación para resolver la ruta relativa del archivo raíz.
+     * @param resourceBundle El recurso que se utiliza para localizar el archivo raíz.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setTextArea();
     }
 
+    /**
+     * Maneja el evento de clic en el botón de salir.
+     * Cambia la escena a la vista de tablas.
+     */
     public void exitButtonClicked(){
         cambiarScene("/com/admin/canarysoundsphereadmin/tables-view.fxml", "Tablas", title);
     }
 
+    /**
+     * Maneja el evento de clic en el botón de enviar.
+     * Recoge la información del formulario y la envía para insertar un nuevo evento.
+     */
     public void sendButtonClicked() {
         String name = nameTextField.getText();
         String logo = logoTextField.getText();
@@ -117,7 +135,12 @@ public class InsertEventsController implements Initializable {
         clean();
     }
 
-
+    /**
+     * Maneja el evento de clic en el botón de búsqueda por ID.
+     * Busca un evento por su ID y muestra la información en el área de texto.
+     *
+     * @param mouseEvent El evento de clic del ratón.
+     */
     public void search_by_id_button(MouseEvent mouseEvent) {
         String eventId = search_by_id.getText();
         EventClass foundEvent = EventManager.getEventById(eventId);
@@ -142,10 +165,19 @@ public class InsertEventsController implements Initializable {
         }
     }
 
+    /**
+     * Maneja el evento de clic en el botón de limpiar.
+     * Limpia los campos del formulario.
+     *
+     * @param mouseEvent El evento de clic del ratón.
+     */
     public void clean_button(MouseEvent mouseEvent) {
        clean();
     }
 
+    /**
+     * Limpia los campos del formulario y actualiza el área de texto con la lista de eventos.
+     */
     public void clean(){
         nameTextField.setText("");
         logoTextField.setText("");
@@ -161,6 +193,9 @@ public class InsertEventsController implements Initializable {
         setTextArea();
     }
 
+    /**
+     * Configura el área de texto con la lista de todos los eventos.
+     */
     public void setTextArea(){
         ObservableList<EventClass> events = FXCollections.observableArrayList();
         try {

@@ -114,10 +114,20 @@ public class TablesController implements Initializable {
         authorsTable.setItems(authors);
     }
 
+
+    /**
+     * Maneja el clic en el botón para insertar un nuevo autor.
+     * Cambia a la vista de inserción de autores.
+     */
     public void insertAuthorButtonClicked(){
        cambiarScene("/com/admin/canarysoundsphereadmin/insertAuthor-view.fxml", "Insertar evento", eventsTitle);
     }
 
+    /**
+     * Maneja el clic en el botón para actualizar un autor seleccionado.
+     * Si hay un autor seleccionado, obtiene su ID y cambia a la vista de actualización de autores.
+     * Si no hay autor seleccionado, muestra una alerta de error.
+     */
     public void updateAuthorButtonClicked(){
         Author selectedAuthor = authorsTable.getSelectionModel().getSelectedItem();
         if(selectedAuthor != null) {
@@ -128,6 +138,13 @@ public class TablesController implements Initializable {
         }
     }
 
+    /**
+     * Maneja el clic en el botón para eliminar un autor seleccionado.
+     * Si hay un autor seleccionado, obtiene su ID y lo elimina.
+     * Si la eliminación es exitosa, actualiza la tabla de autores.
+     * Si no se puede eliminar, muestra una alerta de error.
+     * Si no hay autor seleccionado, muestra una alerta de error.
+     */
     public void deleteAuthorButtonClicked(){
         Author selectedAuthor = authorsTable.getSelectionModel().getSelectedItem();
         if(selectedAuthor != null) {
@@ -149,10 +166,19 @@ public class TablesController implements Initializable {
         }
     }
 
+    /**
+     * Maneja el clic en el botón para insertar un nuevo evento.
+     * Cambia a la vista de inserción de eventos.
+     */
     public void insertEventButtonClicked(){
         cambiarScene("/com/admin/canarysoundsphereadmin/insertEvent-view.fxml", "Insertar evento", eventsTitle);
     }
 
+    /**
+     * Maneja el clic en el botón para actualizar un evento seleccionado.
+     * Si hay un evento seleccionado, obtiene su ID y cambia a la vista de actualización de eventos.
+     * Si no hay evento seleccionado, muestra una alerta de error.
+     */
     public void updateEventButtonClicked(){
         EventClass selectedEvent = eventsTable.getSelectionModel().getSelectedItem();
         if(selectedEvent != null) {
@@ -163,6 +189,13 @@ public class TablesController implements Initializable {
         }
     }
 
+    /**
+     * Maneja el clic en el botón para eliminar un evento seleccionado.
+     * Si hay un evento seleccionado, obtiene su ID y lo elimina.
+     * Si la eliminación es exitosa, actualiza la tabla de eventos.
+     * Si no se puede eliminar, muestra una alerta de error.
+     * Si no hay evento seleccionado, muestra una alerta de error.
+     */
     public void deleteEventButtonClicked(){
         EventClass selectedEvent = eventsTable.getSelectionModel().getSelectedItem();
         if(selectedEvent != null) {
@@ -183,6 +216,11 @@ public class TablesController implements Initializable {
             showAlert("Error","Selecciona un evento", Alert.AlertType.ERROR);
         }
     }
+
+    /**
+     * Maneja el clic en el botón para cerrar sesión.
+     * Cambia a la vista de inicio de sesión.
+     */
     public void close_session(MouseEvent mouseEvent) {
         cambiarScene("/com/admin/canarysoundsphereadmin/login-view.fxml", "Login", eventsTitle);
     }

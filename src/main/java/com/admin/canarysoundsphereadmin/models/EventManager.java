@@ -13,6 +13,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EventManager {
+
+    /**
+     * Recupera todos los eventos desde la API remota.
+     *
+     * @return Una lista de objetos EventClass que representan todos los eventos.
+     * @throws IOException   Si ocurre un error de E/S mientras se conecta a la API.
+     * @throws JSONException Si hay un error en el procesamiento de JSON.
+     */
     public static List<EventClass> getAllEvents() throws IOException, JSONException {
         List<EventClass> events = new ArrayList<>();
         String apiUrl = "http://localhost:9006/events";
@@ -55,6 +63,13 @@ public class EventManager {
         return events;
     }
 
+    /**
+     * Inserta un nuevo evento en la API remota.
+     *
+     * @param event     El objeto EventClass que representa el evento a insertar.
+     * @param authToken El token de autenticación para acceder a la API.
+     * @return True si la inserción del evento es exitosa, false de lo contrario.
+     */
     public static boolean insertEvent(EventClass event, String authToken) {
         try {
             JSONObject eventJson = createEventJson(event);
@@ -72,6 +87,13 @@ public class EventManager {
         }
     }
 
+    /**
+     * Crea un objeto JSON a partir de un objeto EventClass.
+     *
+     * @param event El evento del cual se crea el objeto JSON.
+     * @return El objeto JSON creado a partir del evento.
+     * @throws JSONException Si ocurre un error al construir el objeto JSON.
+     */
     private static JSONObject createEventJson(EventClass event) throws JSONException {
         JSONObject eventJson = new JSONObject();
         eventJson.put("_id", event.get_id());
@@ -88,6 +110,14 @@ public class EventManager {
         return eventJson;
     }
 
+
+    /**
+     * Crea una conexión HTTP con la API remota para la inserción de un evento.
+     *
+     * @param authToken El token de autenticación para acceder a la API.
+     * @return La conexión HTTP configurada para la inserción de un evento.
+     * @throws IOException Si ocurre un error de E/S durante la conexión.
+     */
     private static HttpURLConnection createConnection(String authToken) throws IOException {
         String apiUrl = "http://localhost:9006/events";
         URL url = new URL(apiUrl);
@@ -99,6 +129,13 @@ public class EventManager {
         return con;
     }
 
+    /**
+     * Envía una solicitud HTTP con el objeto JSON del evento a la API remota.
+     *
+     * @param con       La conexión HTTP configurada para la solicitud.
+     * @param eventJson El objeto JSON del evento que se enviará en la solicitud.
+     * @throws IOException Si ocurre un error de E/S durante el envío de la solicitud.
+     */
     private static void sendRequest(HttpURLConnection con, JSONObject eventJson) throws IOException {
         try(OutputStream os = con.getOutputStream()) {
             byte[] input = eventJson.toString().getBytes("utf-8");
@@ -106,6 +143,12 @@ public class EventManager {
         }
     }
 
+    /**
+     * Recupera un evento por su ID desde la API remota.
+     *
+     * @param eventId El ID del evento a recuperar.
+     * @return El objeto EventClass que representa el evento recuperado.
+     */
     public static EventClass getEventById(String eventId) {
         try {
             String apiUrl = "http://localhost:9006/events/" + eventId;
@@ -148,6 +191,11 @@ public class EventManager {
         return null;
     }
 
+    /**
+     * Genera el ID para un nuevo evento incrementando el ID máximo existente.
+     *
+     * @return El ID generado para el nuevo evento.
+     */
     public static String idEventPlusOne(){
         try {
             List<EventClass> events = EventManager.getAllEvents();
@@ -168,6 +216,15 @@ public class EventManager {
         return "0001";
     }
 
+    /**
+     * Actualiza un campo específico de un evento en la API remota.
+     *
+     * @param eventId   El ID del evento que se actualizará.
+     * @param fieldName El nombre del campo que se actualizará.
+     * @param newValue  El nuevo valor para el campo especificado.
+     * @param authToken El token de autenticación para acceder a la API.
+     * @return True si la actualización del campo es exitosa, false de lo contrario.
+     */
     public static boolean updateEventFieldById(String eventId, String fieldName, String newValue, String authToken) {
         try {
             JSONObject updateJson = new JSONObject();
@@ -201,6 +258,13 @@ public class EventManager {
         }
     }
 
+    /**
+     * Elimina un evento por su ID desde la API remota.
+     *
+     * @param eventId   El ID del evento que se eliminará.
+     * @param authToken El token de autenticación para acceder a la API.
+     * @return True si el evento se elimina exitosamente, false de lo contrario.
+     */
     public static boolean deleteEventById(String eventId, String authToken) {
         try {
             String apiUrl = "http://localhost:9006/events/" + eventId;

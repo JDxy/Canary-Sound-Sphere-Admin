@@ -17,6 +17,9 @@ import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers
 import static com.admin.canarysoundsphereadmin.controllers.TablesController.authorId;
 import static com.admin.canarysoundsphereadmin.models.AuthorManager.updateAuthorFieldById;
 
+/**
+ * Controlador para actualizar información de autores.
+ */
 public class UpdateAuthorController implements Initializable {
     @FXML
     public TextArea newValueTextArea;
@@ -27,6 +30,13 @@ public class UpdateAuthorController implements Initializable {
     @FXML
     private ComboBox fieldsComboBox;
 
+    /**
+     * Inicializa el controlador.
+     *
+     * @param url            La ubicación para resolver rutas relativas de la raíz del objeto url;
+     *                       puede ser nulo si no se conoce la ubicación
+     * @param resourceBundle El ResourceBundle que se puede usar para localizar objetos de cadena, puede ser nulo
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ObservableList<String> fields = FXCollections.observableArrayList(
@@ -35,10 +45,16 @@ public class UpdateAuthorController implements Initializable {
         fieldsComboBox.setItems(fields);
     }
 
+    /**
+     * Maneja el clic en el botón de salida.
+     */
     public void exitButtonClicked(){
         cambiarScene("/com/admin/canarysoundsphereadmin/tables-view.fxml", "Tablas", title);
     }
 
+    /**
+     * Maneja el clic en el botón de enviar.
+     */
     public void sendButtonClicked(){
         String fieldName = (String) fieldsComboBox.getValue();
         String newValue = newValueTextArea.getText();
@@ -56,6 +72,9 @@ public class UpdateAuthorController implements Initializable {
         }
     }
 
+    /**
+     * Busca y muestra el autor actualizado.
+     */
     public void searchUpdateAuthor() {
         String authorId = TablesController.authorId;
         Author foundAuthor = AuthorManager.getAuthorById(authorId);

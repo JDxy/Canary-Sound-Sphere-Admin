@@ -20,6 +20,10 @@ import static com.admin.canarysoundsphereadmin.controllers.MethodsForControllers
 import static com.admin.canarysoundsphereadmin.models.AuthorManager.idAuthorPlusOne;
 import static com.admin.canarysoundsphereadmin.models.AuthorManager.insertAuthor;
 
+/**
+ * Controlador para la funcionalidad de insertar autores en la aplicación de administración de Canary Sound Sphere.
+ * Gestiona la interfaz de usuario y las interacciones para insertar un nuevo autor.
+ */
 public class InsertAuthorController  implements Initializable {
     @FXML
     public TextArea showAuthor;
@@ -40,15 +44,32 @@ public class InsertAuthorController  implements Initializable {
     @FXML
     private Label title;
 
+    /**
+     * Inicializa la clase del controlador. Este método se llama automáticamente después de que el archivo FXML ha sido cargado.
+     *
+     * @param url            La URL utilizada para resolver el objeto raíz.
+     * @param resourceBundle El recurso que se utiliza para localizar el objeto raíz.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setTextArea();
     }
 
+    /**
+     * Maneja el evento de clic en el botón de salir.
+     * Cambia la escena a la vista de tablas.
+     */
     public void exitButtonClicked(){
         cambiarScene("/com/admin/canarysoundsphereadmin/tables-view.fxml", "Tablas", title);
     }
 
+    /**
+     * Maneja el evento de clic en el botón de enviar.
+     * Recoge la información del formulario y la envía para insertar un nuevo autor.
+     *
+     * @throws JSONException Si ocurre un error al crear el objeto JSON.
+     * @throws IOException   Si ocurre un error de entrada/salida.
+     */
     public void sendButtonClicked() throws JSONException, IOException {
         String name = nameTextField.getText();
         String image = imageTextField.getText();
@@ -91,6 +112,12 @@ public class InsertAuthorController  implements Initializable {
         clean();
     }
 
+    /**
+     * Maneja el evento de clic en el botón de buscar por ID.
+     * Busca un autor por su ID y muestra la información en el área de texto.
+     *
+     * @param mouseEvent El evento de clic del ratón.
+     */
     public void search_by_id_button(MouseEvent mouseEvent) {
         String authorId = search_by_id.getText();
         Author foundAuthor = AuthorManager.getAuthorById(authorId);
@@ -111,10 +138,19 @@ public class InsertAuthorController  implements Initializable {
         }
     }
 
+    /**
+     * Maneja el evento de clic en el botón de limpiar.
+     * Limpia los campos del formulario.
+     *
+     * @param mouseEvent El evento de clic del ratón.
+     */
     public void clean_button(MouseEvent mouseEvent) {
         clean();
     }
 
+    /**
+     * Limpia los campos del formulario y actualiza el área de texto con la lista de autores.
+     */
     public void clean(){
         nameTextField.setText("");
         imageTextField.setText("");
@@ -126,6 +162,9 @@ public class InsertAuthorController  implements Initializable {
         setTextArea();
     }
 
+    /**
+     * Configura el área de texto con la lista de todos los autores.
+     */
     public void setTextArea(){
         ObservableList<Author> authors = FXCollections.observableArrayList();
         try {
