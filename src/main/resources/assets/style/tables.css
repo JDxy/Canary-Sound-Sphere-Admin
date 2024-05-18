@@ -43,3 +43,7 @@
     -fx-background-color: #FB8500;
     -fx-text-fill: black;
 }
+.footer_text{
+    -fx-font-size:16px;
+    -fx-text-fill:rgba(0, 0, 0, 0.9);
+}

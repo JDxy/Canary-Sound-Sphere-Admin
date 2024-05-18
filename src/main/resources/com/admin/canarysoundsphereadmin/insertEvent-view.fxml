@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,32 +15,38 @@
    <children>
       <Pane prefHeight="800.0" prefWidth="1100.0" styleClass="paneContent">
          <children>
-            <TextField fx:id="nameTextField" layoutX="632.0" layoutY="72.0" maxHeight="40.0" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0" promptText="Nombre" styleClass="input_Style" />
-            <TextField fx:id="logoTextField" layoutX="632.0" layoutY="130.0" maxHeight="40.0" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0" promptText="Logo" styleClass="input_Style" />
-            <TextField fx:id="imageTextField" layoutX="632.0" layoutY="188.0" maxHeight="40.0" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0" promptText="Imagen" styleClass="input_Style" />
-            <TextField fx:id="dateTextField" layoutX="632.0" layoutY="246.0" maxHeight="40.0" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0" promptText="Fecha" styleClass="input_Style" />
-            <TextField fx:id="hourTextField" layoutX="632.0" layoutY="304.0" maxHeight="40.0" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0" promptText="Hora" styleClass="input_Style" />
-            <TextField fx:id="capacityTextField" layoutX="632.0" layoutY="362.0" maxHeight="40.0" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0" promptText="Capacidad" styleClass="input_Style" />
-            <TextField fx:id="descriptionTextField" layoutX="632.0" layoutY="420.0" maxHeight="40.0" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0" promptText="Descripción" styleClass="input_Style" />
-            <TextField fx:id="directionTextField" layoutX="632.0" layoutY="478.0" maxHeight="40.0" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0" promptText="Dirección" styleClass="input_Style" />
-            <TextField fx:id="markerTextField" layoutX="632.0" layoutY="536.0" maxHeight="40.0" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0" promptText="Coordenadas" styleClass="input_Style" />
-            <TextField fx:id="ticketsStoreTextFields" layoutX="632.0" layoutY="594.0" maxHeight="40.0" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0" promptText="Tienda de Tickets" styleClass="input_Style" />
-            <Button layoutX="632.0" layoutY="696.0" minHeight="40.0" minWidth="110.0" mnemonicParsing="false" onMouseClicked="#sendButtonClicked" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Enviar" />
-            <Button layoutX="922.0" layoutY="696.0" minHeight="40.0" minWidth="110.0" mnemonicParsing="false" onMouseClicked="#exitButtonClicked" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Salir" />
-            <ImageView fitHeight="382.0" fitWidth="533.0" layoutX="55.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+            <TextField fx:id="nameTextField" layoutX="640.0" layoutY="68.0" maxHeight="40.0" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0" promptText="Nombre" styleClass="input_Style" />
+            <TextField fx:id="logoTextField" layoutX="640.0" layoutY="126.0" maxHeight="40.0" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0" promptText="Logo" styleClass="input_Style" />
+            <TextField fx:id="imageTextField" layoutX="640.0" layoutY="184.0" maxHeight="40.0" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0" promptText="Imagen" styleClass="input_Style" />
+            <TextField fx:id="dateTextField" layoutX="640.0" layoutY="242.0" maxHeight="40.0" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0" promptText="Fecha" styleClass="input_Style" />
+            <TextField fx:id="hourTextField" layoutX="640.0" layoutY="300.0" maxHeight="40.0" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0" promptText="Hora" styleClass="input_Style" />
+            <TextField fx:id="capacityTextField" layoutX="640.0" layoutY="358.0" maxHeight="40.0" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0" promptText="Capacidad" styleClass="input_Style" />
+            <TextField fx:id="descriptionTextField" layoutX="640.0" layoutY="416.0" maxHeight="40.0" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0" promptText="Descripción" styleClass="input_Style" />
+            <TextField fx:id="directionTextField" layoutX="640.0" layoutY="474.0" maxHeight="40.0" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0" promptText="Dirección" styleClass="input_Style" />
+            <TextField fx:id="markerTextField" layoutX="640.0" layoutY="532.0" maxHeight="40.0" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0" promptText="Coordenadas" styleClass="input_Style" />
+            <TextField fx:id="ticketsStoreTextFields" layoutX="640.0" layoutY="590.0" maxHeight="40.0" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0" promptText="Tienda de Tickets" styleClass="input_Style" />
+            <Button layoutX="640.0" layoutY="692.0" minHeight="40.0" minWidth="110.0" mnemonicParsing="false" onMouseClicked="#sendButtonClicked" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Enviar" />
+            <Button layoutX="930.0" layoutY="692.0" minHeight="40.0" minWidth="110.0" mnemonicParsing="false" onMouseClicked="#exitButtonClicked" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Salir" />
+            <ImageView fitHeight="342.0" fitWidth="513.0" layoutX="61.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../assets/images/concert.jpg" />
+                  <Image url="@../../../assets/images/piano2Edit.jpg" />
                </image>
+               <effect>
+                  <InnerShadow choke="1.0" height="10.0" radius="4.5" width="10.0" />
+               </effect>
             </ImageView>
-            <TextArea fx:id="showEvent" editable="false" layoutX="53.0" layoutY="513.0" opacity="0.8" prefHeight="223.0" prefWidth="533.0" styleClass="textarea_style" />
-            <TextField fx:id="search_by_id" layoutX="55.0" layoutY="451.0" maxHeight="40.0" maxWidth="458.0" prefHeight="40.0" prefWidth="378.0" promptText="Buscar por id" styleClass="input_Style" />
-            <Button layoutX="470.0" layoutY="458.0" minHeight="40.0" minWidth="100.0" mnemonicParsing="false" onMouseClicked="#search_by_id_button" prefHeight="40.0" prefWidth="100.0" styleClass="button_style" text="Buscar" />
-            <Button layoutX="777.0" layoutY="696.0" minHeight="40.0" minWidth="110.0" mnemonicParsing="false" onMouseClicked="#clean_button" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Limpiar" />
-            <Label fx:id="title" layoutX="122.0" layoutY="181.0" opacity="0.8" styleClass="title" text="EVENTOS" textFill="WHITE">
+            <TextField fx:id="search_by_id" layoutX="61.0" layoutY="416.0" maxHeight="40.0" maxWidth="458.0" prefHeight="40.0" prefWidth="378.0" promptText="Buscar por id" styleClass="input_Style" />
+            <Button layoutX="474.0" layoutY="416.0" minHeight="40.0" minWidth="100.0" mnemonicParsing="false" onMouseClicked="#search_by_id_button" prefHeight="40.0" prefWidth="100.0" styleClass="button_style" text="Buscar" />
+            <Button layoutX="785.0" layoutY="692.0" minHeight="40.0" minWidth="110.0" mnemonicParsing="false" onMouseClicked="#clean_button" prefHeight="40.0" prefWidth="110.0" styleClass="button_style" text="Limpiar" />
+            <Label fx:id="title" layoutX="118.0" layoutY="177.0" opacity="0.8" styleClass="title" text="EVENTOS" textFill="WHITE">
                <font>
                   <Font name="Roboto Bold" size="36.0" />
                </font>
             </Label>
+            <TextArea fx:id="showEvent" editable="false" layoutX="61.0" layoutY="492.0" opacity="0.8" prefHeight="240.0" prefWidth="513.0" styleClass="textarea_style">
+               <effect>
+                  <InnerShadow choke="1.0" height="10.0" radius="4.5" width="10.0" />
+               </effect></TextArea>
          </children>
       </Pane>
    </children>

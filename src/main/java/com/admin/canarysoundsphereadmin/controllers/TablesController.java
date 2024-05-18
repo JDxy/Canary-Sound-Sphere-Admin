@@ -115,7 +115,7 @@ public class TablesController implements Initializable {
     }
 
     public void insertAuthorButtonClicked(){
-       cambiarScene("/com/admin/canarysoundsphereadmin/insertAuthor-view.fxml", "Insertar evento", eventsTitle);
+       cambiarScene("/com/admin/canarysoundsphereadmin/insertAuthor-view.fxml", "Insertar autor", eventsTitle);
     }
 
     public void updateAuthorButtonClicked(){
